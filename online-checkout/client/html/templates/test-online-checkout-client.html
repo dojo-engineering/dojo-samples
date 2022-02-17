@@ -1,0 +1,37 @@
+<html>
+
+<head>
+  <title>Checkout</title>
+</head>
+
+<body>
+  <input type="button" value="Pay" id="MyButton" onclick="myFunction()">
+  <script type="text/javascript">
+    function myFunction() {
+      // POST
+      fetch('/checkout', {
+
+        // Declare what type of data we're sending
+        headers: {
+          'Content-Type': 'application/json'
+        },
+
+        // Specify the method
+        method: 'POST',
+        mode: 'no-cors',
+
+        // A JSON payload
+        body: JSON.stringify({
+          "greeting": ""
+        })
+      })
+      .then(response => response.json())
+        .then(function (data) {
+          var redirectLink = "https://checkout-dev.dojo.dev/master/checkout/" + data.id
+          window.location.replace(redirectLink)
+        });
+    }
+  </script>
+</body>
+
+</html>
