@@ -9,4 +9,4 @@ curl --request POST \
            "paymentMethods": [
                "Card", "Wallet"
             ]
-        }'
+          }'

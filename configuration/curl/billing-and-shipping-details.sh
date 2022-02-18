@@ -11,4 +11,4 @@ curl --request POST \
                 "billingAddress":{"collectionRequired": true},
                 "shippingDetails":{"collectionRequired": true}
                 }
-            }'
+          }'

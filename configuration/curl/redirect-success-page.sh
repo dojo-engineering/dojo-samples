@@ -9,4 +9,4 @@ curl --request POST \
            "config": {
                "redirectUrl": "http://site.com/checkout/success_pay"
                 }
-            }'
+          }'

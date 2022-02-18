@@ -25,5 +25,5 @@ curl --request POST \
                         "currencyCode": "GBP"
                     }
                 }
-            ]
+                ]
             }'
