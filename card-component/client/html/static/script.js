@@ -30,7 +30,7 @@ fetch('/checkout', {
         }
 
         // intialising connection
-        const connectE = new Connect.ConnectE(config, displayErrorsCallback);
+        const dojo = new Dojo.Payment(config, displayErrorsCallback);
 
         // sending payment on button click and processing the response
         const btnTestPay = document.getElementById("testPay");
@@ -38,7 +38,7 @@ fetch('/checkout', {
         btnTestPay.onclick = () =>{
             btnTestPay.innerText = 'loading';
             btnTestPay.setAttribute("disabled", "true");
-            connectE.executePayment()
+            dojo.executePayment()
                 .then(function(data) {
                     document.getElementById("demo-payment").hidden = true;
                     btnTestPay.remove();
