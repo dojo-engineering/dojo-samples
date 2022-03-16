@@ -15,8 +15,7 @@ const config = {
     shippingAddressRequired: false
 }
 
-const wallet = new Connect.Wallet(config, displayErrors, paymentComplete);
-
+const wallet = new Dojo.WalletPayment(config, displayErrors, paymentComplete);
 
 function paymentComplete(response) {
     document.getElementById('demo-payment-wallet').hidden = true;

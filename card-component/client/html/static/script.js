@@ -18,8 +18,6 @@ fetch('/checkout', {
     .then(function (data) {
         const config = {
             paymentDetails: {
-                //amount: data.amount,
-                //currencyCode: data.currencyCode,
                 paymentToken: data.paymentToken,  //connecteToken
             },
             containerId: "demo-payment",
@@ -30,7 +28,7 @@ fetch('/checkout', {
         }
 
         // intialising connection
-        const dojo = new Dojo.Payment(config, displayErrorsCallback);
+        const card = new Dojo.Payment(config, displayErrorsCallback);
 
         // sending payment on button click and processing the response
         const btnTestPay = document.getElementById("testPay");
@@ -38,7 +36,7 @@ fetch('/checkout', {
         btnTestPay.onclick = () =>{
             btnTestPay.innerText = 'loading';
             btnTestPay.setAttribute("disabled", "true");
-            dojo.executePayment()
+            card.executePayment()
                 .then(function(data) {
                     document.getElementById("demo-payment").hidden = true;
                     btnTestPay.remove();
