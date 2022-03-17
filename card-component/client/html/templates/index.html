@@ -4,23 +4,23 @@
 <head>
     <link rel="stylesheet" href="static/styles.css">
     <script src="https://cdn.dojo.tech/payments/v1/client.js"></script>
+    <script src="static/script.js"></script>
 </head>
 
 <body>
-<h1>Card component</h1>
-<div id="demo-payment"></div>
-<div id="errors"></div>
-<button id="testPay" class="btn-primary btn pull-right" data-loading-text="Processing...">Pay</button>
-<div id="demo-result" style="display: none">
-    <h5>Payment Complete</h5>
-    <dl>
-        <dt>Status Code</dt>
-        <dd id="status-code"></dd>
-        <dt>Auth Code</dt>
-        <dd id="auth-code"></dd>
-    </dl>
-</div>
-<script src="static/script.js"></script>
+    <h1>Card component</h1>
+    <div id="demo-payment"></div>
+    <div id="errors"></div>
+    <button id="testPay" class="btn-primary btn pull-right" data-loading-text="Processing...">Pay</button>
+    <div id="demo-result" hidden>
+        <h5>Payment Complete</h5>
+        <dl>
+            <dt>Status Code</dt>
+            <dd id="status-code"></dd>
+            <dt>Auth Code</dt>
+            <dd id="auth-code"></dd>
+        </dl>
+    </div>
 </body>
 
 </html>

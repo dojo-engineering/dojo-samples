@@ -25,9 +25,9 @@ fetch('/checkout', {
             styles: {
                 base: {
                     default: {
-                        '-webkit-appearance':'none',
-                        '-moz-appearance':'none',
-                        appearance:'none',
+                        '-webkit-appearance': 'none',
+                        '-moz-appearance': 'none',
+                        appearance: 'none',
                         color: "black",
                         backgroundColor: '#fff',
                         textDecoration: "none",
@@ -41,13 +41,13 @@ fetch('/checkout', {
                         borderColor: '#D9D9D9',
                         lineHeight: '1.5',
                         margin: '0',
-                        borderWidth:'1px',
-                        transition:'border-color 0.2s cubic-bezier(0.35, 0, 0.25, 1)'
+                        borderWidth: '1px',
+                        transition: 'border-color 0.2s cubic-bezier(0.35, 0, 0.25, 1)'
                     },
                     focus: {
                         borderColor: '#00857D',
                         borderWidth: '2px',
-                        outline:'0',
+                        outline: '0',
                         boxShadow: 0
                     },
                     error: {
@@ -59,7 +59,7 @@ fetch('/checkout', {
                         display: 'block',
                         fontSize: '16px',
                         lineHeight: '24px',
-                        marginBottom:'4px',
+                        marginBottom: '4px',
                         color: 'rgba(0,0,0,0.87)',
                         fontFamily: 'Roboto, sans-serif'
                     }
@@ -105,7 +105,7 @@ fetch('/checkout', {
                     borderRadius: '4px'
                 }
             },
-        
+
             cardNumber: {
                 container: {
                     'grid-row': '2',
@@ -119,7 +119,6 @@ fetch('/checkout', {
                 display: 'none'
             }
         }
-        }
 
         // intialising connection
         const card = new Dojo.Payment(config, displayErrorsCallback);
@@ -127,29 +126,29 @@ fetch('/checkout', {
         // sending payment on button click and processing the response
         const btnTestPay = document.getElementById("testPay");
 
-        btnTestPay.onclick = () =>{
+        btnTestPay.onclick = () => {
             btnTestPay.innerText = 'loading';
             btnTestPay.setAttribute("disabled", "true");
             card.executePayment()
-                .then(function(data) {
+                .then(function (data) {
                     document.getElementById("demo-payment").hidden = true;
                     btnTestPay.remove();
                     document.getElementById("demo-result").hidden = false;
                     document.getElementById("status-code").innerText = data.statusCode;
                     document.getElementById("auth-code").innerText = data.authCode;
-                }).catch(function(data) {
-                        console.log('Payment Request failed: ' + data);
-                        btnTestPay.innerText = 'Pay';
-                        btnTestPay.removeAttribute("disabled");
-                        if (typeof data === 'string') {
-                            document.getElementById("errors").innerText = data;
-                        }
-                        if (data && data.message) {
-                            document.getElementById("errors").innerText = data.message;
-                        }
+                }).catch(function (data) {
+                    console.log('Payment Request failed: ' + data);
+                    btnTestPay.innerText = 'Pay';
+                    btnTestPay.removeAttribute("disabled");
+                    if (typeof data === 'string') {
+                        document.getElementById("errors").innerText = data;
                     }
+                    if (data && data.message) {
+                        document.getElementById("errors").innerText = data.message;
+                    }
+                }
                 );
-            };
+        };
 
         // handling errors
         function displayErrorsCallback(errors) {
