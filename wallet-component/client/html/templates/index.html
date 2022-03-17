@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="static/styles.css">
     <script src="https://cdn.dojo.tech/payments/v1/client.js"></script>
 </head>
 
@@ -10,16 +10,18 @@
     <h1>Wallet component</h1>
     <div id="demo-payment-wallet"></div>
     <div id="errors"></div>
-    <div id="demo-result" style="display: none">
+    <div id="demo-result" hidden>
         <h5>Payment Complete</h5>
         <dl>
             <dt>Status Code</dt>
             <dd id="status-code"></dd>
             <dt>Auth Code</dt>
             <dd id="auth-code"></dd>
+            <dt>Message</dt>
+            <dd id="message"></dd>
         </dl>
     </div>
-    <script src="script.js"></script>
+    <script src="static/script.js"></script>
 </body>
 
 </html>
