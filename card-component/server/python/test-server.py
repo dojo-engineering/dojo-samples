@@ -52,6 +52,7 @@ def hello():
         data = res.read()
         resp_data = {}
         resp_data['paymentToken'] = json.loads(data)["connecteToken"]
+        print(resp_data)
         # resp_data['amount'] = json.loads(data)["amount"]["value"]
         # resp_data['currencyCode'] = "826"
         json_data = json.dumps(resp_data)
@@ -79,4 +80,4 @@ def webhook():
 @app.route('/')
 def test_page():
   # look inside `templates` and serve `index.html`
-  return render_template('card.html')
+  return render_template('index.html')
