@@ -4,7 +4,7 @@ import json
 conn = http.client.HTTPSConnection("api.dojo.tech")
 payload = json.dumps({
     "amount": {
-        "value": 1000,
+        "value": 1510,
         "currencyCode": "GBP"
     },
     "reference": "Order 245",
@@ -27,7 +27,32 @@ payload = json.dumps({
                         "currencyCode": "GBP"
                     }
                 }
-    ]
+    ],
+     "taxLines": [
+                {
+                "id": "vat",
+                "caption": "VAT",
+                "subCaption": "10%",
+                "amountTotal": {
+                        "value": 10,
+                        "currencyCode": "GBP"
+                    }
+                },
+                {
+                "id": "delivery",
+                "caption": "Delivery",
+                "amountTotal": {
+                        "value": 500,
+                        "currencyCode": "GBP"
+                    }
+                }
+            ],
+            "config": {
+                "details": 
+                        {
+                        "showTotal": true
+                        }
+                }
 })
 headers = {
     'content-type': "application/json",
