@@ -30,7 +30,7 @@ fetch('/checkout', {
             shippingAddressRequired: false
         }
 
-        const wallet = new Dojo.WalletPayment(config, displayErrors, paymentComplete);
+        const wallet = new Dojo.WalletPayment(config, displayErrorsCallback, paymentComplete);
 
         function paymentComplete(response) {
             document.getElementById('demo-payment-wallet').hidden = true;
@@ -40,7 +40,7 @@ fetch('/checkout', {
             document.getElementById('message').innerText = response.message;
         }
         
-        function displayErrors(errors) {
+        function displayErrorsCallback(errors) {
             const errorsDiv = document.getElementById('errors');
             errorsDiv.innerHTML = '';
         
