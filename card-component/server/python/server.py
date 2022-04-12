@@ -51,7 +51,7 @@ def hello():
         res = conn.getresponse()
         data = res.read()
         resp_data = {}
-        resp_data['paymentToken'] = json.loads(data)["connecteToken"]
+        resp_data['clientSessionSecret'] = json.loads(data)["clientSessionSecret"]
         print(resp_data)
         json_data = json.dumps(resp_data)
         resp = app.response_class(
