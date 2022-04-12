@@ -12,7 +12,7 @@ payload = json.dumps({
 headers = {
     'content-type': "application/json",
     'version': "2022-01-03",
-    'Authorization': "Basic sk_sandbox_c8oLGaI__msxsXbpBDpdt5Fbi5WA7QChf4rI7pFvt8vUx3X2a0RsB0q-2rmqp6T7HF3d1yw06WD81RbaFXiX2A"  # <-- Change to your secret key
+    'Authorization': "Basic sk_sandbox_UrieoHWSzHeSYqk8Yw4Ti_d7GIBBXsJOkEyIl5L_TXzWcS7jFyrX6kn6xdtmBijP"  # <-- Change to your secret key
 }
 conn.request("POST", "/payment-intents", payload, headers)
 res = conn.getresponse()
