@@ -2,7 +2,7 @@ var client = new RestClient("https://api.dojo.tech/payment-intents/");
 client.Timeout = -1;
 var request = new RestRequest(Method.POST);
 request.AddHeader("Authorization", "Basic sk_sandbox_c8oLGaI__msxsXbpBDpdtwJEz_eIhfQoKHmedqgZPCdBx59zpKZLSk8OPLT0cZolbeuYJSBvzDVVsYvtpo5RkQ");
-request.AddHeader("Version", "2022-01-03");
+request.AddHeader("Version", "2022-04-07");
 request.AddHeader("Content-Type", "application/json");
 var body = @"{" + "\n" +
 @"  ""amount"": {" + "\n" +

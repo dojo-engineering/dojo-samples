@@ -3,5 +3,5 @@ curl -v --request POST \
   --header 'content-type: application/json' \
   --header 'idempotencyKey: 656565gfyd65' \
   --header 'Authorization: Basic sk_sandbox_c8oLGaI__msxsXbpBDpdtwJEz_eIhfQoKHmedqgZPCdBx59zpKZLSk8OPLT0cZolbeuYJSBvzDVVsYvtpo5RkQ' \
-  --header 'version: 2022-01-03' \
+  --header 'version: 2022-04-07' \
   --data '{"amount":{"value":200,"currencyCode":"GBP"}}'
