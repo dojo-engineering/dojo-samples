@@ -1,7 +1,7 @@
 curl -v --request POST \
   --url https://api.dojo.tech/payment-intents \
   --header 'content-type: application/json' \
-  --header 'Authorization: Basic sk_sandbox_kqCwRaWEsl9OM0xNSxh00eayT9k8hAqURGeNQseeV62rMxO5ZiZHub0-XRqkzPLfES2fVUl0seMOyujCIiYaMTaDyiBPf25b7W3Gr3oE0qbpTeM4MRuUMgtDt_scAEfJdqYBlBB_gt_31Bw7FihTISp2WIXXGeTD5WbwhdIhraIJVWR7jo2Hy-xKlBpK-lE8' \
+  --header 'Authorization: Basic sk_sandbox_c8oLGaI__msxsXbpBDpdt5Fbi5WA7QChf4rI7pFvt8vUx3X2a0RsB0q-2rmqp6T7HF3d1yw06WD81RbaFXiX2A' \
   --header 'version: 2022-01-03' \
   --data '{"captureMode":"Auto",
             "amount":{"value":1000,"currencyCode":"GBP"},
