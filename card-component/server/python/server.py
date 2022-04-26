@@ -24,7 +24,7 @@ def hello():
           })
         subscribe_headers = {
             'content-type': "application/json",
-            'version': "2022-01-03",
+            'version': "2022-04-07",
             'Authorization': "Basic sk_sandbox_c8oLGaI__msxsXbpBDpdtwJEz_eIhfQoKHmedqgZPCdBx59zpKZLSk8OPLT0cZolbeuYJSBvzDVVsYvtpo5RkQ" # <-- Change to your secret key
             }
         conn.request("POST", "/webhooks/", subscribe_data, subscribe_headers)
@@ -42,7 +42,7 @@ def hello():
           })
         headers = {
             'content-type': "application/json",
-            'version': "2022-01-03",
+            'version': "2022-04-07",
             'Authorization': "Basic sk_sandbox_c8oLGaI__msxsXbpBDpdtwJEz_eIhfQoKHmedqgZPCdBx59zpKZLSk8OPLT0cZolbeuYJSBvzDVVsYvtpo5RkQ" # <-- Change to your secret key
             }
         conn.request("POST", "/payment-intents/", payload, headers)
@@ -51,7 +51,7 @@ def hello():
         res = conn.getresponse()
         data = res.read()
         resp_data = {}
-        resp_data['paymentToken'] = json.loads(data)["connecteToken"]
+        resp_data['clientSessionSecret'] = json.loads(data)["clientSessionSecret"]
         print(resp_data)
         json_data = json.dumps(resp_data)
         resp = app.response_class(

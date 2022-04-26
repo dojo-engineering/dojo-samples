@@ -6,7 +6,7 @@ payload = "{\"events\":[\"payment_intent.status_updated\"],\"url\":\"https://exa
 
 headers = {
     'content-type': "application/json",
-    'version': "2022-01-03",
+    'version': "2022-04-07",
     'Authorization': "Basic sk_sandbox_c8oLGaI__msxsXbpBDpdtwJEz_eIhfQoKHmedqgZPCdBx59zpKZLSk8OPLT0cZolbeuYJSBvzDVVsYvtpo5RkQ" # <-- Change to your secret key
     }
 
