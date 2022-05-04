@@ -19,7 +19,7 @@ fetch('/checkout', {
         const config = {
             containerId: 'demo-payment-wallet',
             paymentDetails: {
-                paymentToken: data.paymentToken,  //connecteToken
+                paymentToken: data.clientSessionSecret,
             },
             buttonConfig: {
                 color: 'black',

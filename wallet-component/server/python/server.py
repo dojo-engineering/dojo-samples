@@ -24,8 +24,8 @@ def hello():
           })
         subscribe_headers = {
             'content-type': "application/json",
-            'version': "2022-01-03",
-            'Authorization': "Basic sk_sandbox_kqCwRaWEsl9OM0xNSxh00eayT9k8hAqURGeNQseeV62rMxO5ZiZHub0-XRqkzPLfES2fVUl0seMOyujCIiYaMTaDyiBPf25b7W3Gr3oE0qbpTeM4MRuUMgtDt_scAEfJdqYBlBB_gt_31Bw7FihTISp2WIXXGeTD5WbwhdIhraIJVWR7jo2Hy-xKlBpK-lE8" # <-- Change to your secret key
+            'version': "2022-04-07",
+            'Authorization': "Basic sk_sandbox_c8oLGaI__msxsXbpBDpdtwJEz_eIhfQoKHmedqgZPCdBx59zpKZLSk8OPLT0cZolbeuYJSBvzDVVsYvtpo5RkQ" # <-- Change to your secret key
             }
         conn.request("POST", "/webhooks/", subscribe_data, subscribe_headers)
         subscribe_res = conn.getresponse()
@@ -42,8 +42,8 @@ def hello():
           })
         headers = {
             'content-type': "application/json",
-            'version': "2022-01-03",
-            'Authorization': "Basic sk_sandbox_kqCwRaWEsl9OM0xNSxh00eayT9k8hAqURGeNQseeV62rMxO5ZiZHub0-XRqkzPLfES2fVUl0seMOyujCIiYaMTaDyiBPf25b7W3Gr3oE0qbpTeM4MRuUMgtDt_scAEfJdqYBlBB_gt_31Bw7FihTISp2WIXXGeTD5WbwhdIhraIJVWR7jo2Hy-xKlBpK-lE8" # <-- Change to your secret key
+            'version': "2022-04-07",
+            'Authorization': "Basic sk_sandbox_c8oLGaI__msxsXbpBDpdtwJEz_eIhfQoKHmedqgZPCdBx59zpKZLSk8OPLT0cZolbeuYJSBvzDVVsYvtpo5RkQ" # <-- Change to your secret key
             }
         conn.request("POST", "/payment-intents/", payload, headers)
 
@@ -51,7 +51,7 @@ def hello():
         res = conn.getresponse()
         data = res.read()
         resp_data = {}
-        resp_data['paymentToken'] = json.loads(data)["connecteToken"]
+        resp_data['clientSessionSecret'] = json.loads(data)["clientSessionSecret"]
         print(resp_data)
         json_data = json.dumps(resp_data)
         resp = app.response_class(
