@@ -1,19 +1,14 @@
-var client = new RestClient("https://api.dojo.tech/payment-intents/");
-client.Timeout = -1;
-var request = new RestRequest(Method.POST);
-request.AddHeader("Authorization", "Basic sk_sandbox_c8oLGaI__msxsXbpBDpdtwJEz_eIhfQoKHmedqgZPCdBx59zpKZLSk8OPLT0cZolbeuYJSBvzDVVsYvtpo5RkQ");
-request.AddHeader("Version", "2022-04-07");
-request.AddHeader("Content-Type", "application/json");
-var body = @"{" + "\n" +
-@"  ""amount"": {" + "\n" +
-@"    ""value"": 1000," + "\n" +
-@"    ""currencyCode"": ""GBP""" + "\n" +
-@"  }," + "\n" +
-@"  ""reference"": ""Order-0001""," + "\n" +
-@"  ""config"": {" + "\n" +
-@"        ""redirectUrl"": ""http://site.com/checkout/success_pay""," + "\n" +
-@"    }" + "\n" +
-@"}";
-request.AddParameter("application/json", body,  ParameterType.RequestBody);
-IRestResponse response = client.Execute(request);
-Console.WriteLine(response.Content);
+var paymentIntentsClient = new PaymentIntentsClient(new HttpClient(), new ApiKeyClientAuthorization("sk_sandbox_c8oLGaI__msxsXbpBDpdtwJEz_eIhfQoKHmedqgZPCdBx59zpKZLSk8OPLT0cZolbeuYJSBvzDVVsYvtpo5RkQ"));
+var result = await paymentIntentsClient.CreatePaymentIntentAsync(new CreatePaymentIntentRequest
+{
+    Amount = new()
+    {
+        Value = 1000,
+        CurrencyCode = "GBP"
+    },
+    Config = new()
+    {
+        RedirectUrl = new Uri("http://site.com/checkout/success_pay"),
+    },
+    Reference = "Order-0001"
+});

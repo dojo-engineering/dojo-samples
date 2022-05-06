@@ -1,7 +1,2 @@
-var client = new RestClient("https://api.dojo.tech/payment-intents/%7BpaymentIntentId%7D/amount");
-var request = new RestRequest(Method.POST);
-request.AddHeader("content-type", "application/json");
-request.AddHeader("version", "2022-04-07");
-request.AddHeader("Authorization", "Basic sk_sandbox_c8oLGaI__msxsXbpBDpdtwJEz_eIhfQoKHmedqgZPCdBx59zpKZLSk8OPLT0cZolbeuYJSBvzDVVsYvtpo5RkQ");
-request.AddParameter("application/json", "{\"amount\":{\"value\":1000,\"currencyCode\":\"GBP\"}}", ParameterType.RequestBody);
-IRestResponse response = client.Execute(request);
+var paymentIntentsClient = new PaymentIntentsClient(new HttpClient(), new ApiKeyClientAuthorization("sk_sandbox_c8oLGaI__msxsXbpBDpdtwJEz_eIhfQoKHmedqgZPCdBx59zpKZLSk8OPLT0cZolbeuYJSBvzDVVsYvtpo5RkQ"));
+paymentIntentsClient.SetCustomAmountAsync("<PAYMENT_INTENT_ID>", new SetAmountRequest{Amount = new Money {Value = 500, CurrencyCode = "GBP"}});

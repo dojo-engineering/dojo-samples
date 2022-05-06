@@ -1,7 +1,16 @@
-var client = new RestClient("https://api.dojo.tech/payment-intents");
-var request = new RestRequest(Method.POST);
-request.AddHeader("content-type", "application/json");
-request.AddHeader("version", "2022-04-07");
-request.AddHeader("Authorization", "Basic sk_sandbox_c8oLGaI__msxsXbpBDpdtwJEz_eIhfQoKHmedqgZPCdBx59zpKZLSk8OPLT0cZolbeuYJSBvzDVVsYvtpo5RkQ");
-request.AddParameter("application/json", "{\"captureMode\":\"Auto\",\"amount\":{\"value\":1000,\"currencyCode\":\"GBP\"},\"reference\":\"Order 245\"}", ParameterType.RequestBody);
-IRestResponse response = client.Execute(request);
+var paymentIntentsClient = new PaymentIntentsClient(new HttpClient(), new ApiKeyClientAuthorization("sk_sandbox_c8oLGaI__msxsXbpBDpdtwJEz_eIhfQoKHmedqgZPCdBx59zpKZLSk8OPLT0cZolbeuYJSBvzDVVsYvtpo5RkQ"));
+var result = await paymentIntentsClient.CreatePaymentIntentAsync(new CreatePaymentIntentRequest
+{
+    Amount = new()
+    {
+        Value = checkoutRequest.Amount,
+        CurrencyCode = "GBP"
+    },
+    Config = new()
+    {
+        CancelUrl = new Uri(checkoutRequest.CancelUrl),
+        RedirectUrl = new Uri(checkoutRequest.RedirectUrl),
+    },
+    Description = checkoutRequest.Description,
+    Reference = "Order - 1"
+});

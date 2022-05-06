@@ -1,7 +1,5 @@
-var client = new RestClient("https://api.dojo.tech/payment-intents/%7BpaymentIntentId%7D/captures");
-var request = new RestRequest(Method.POST);
-request.AddHeader("content-type", "application/json");
-request.AddHeader("version", "2022-04-07");
-request.AddHeader("Authorization", "Basic sk_sandbox_c8oLGaI__msxsXbpBDpdtwJEz_eIhfQoKHmedqgZPCdBx59zpKZLSk8OPLT0cZolbeuYJSBvzDVVsYvtpo5RkQ");
-request.AddParameter("application/json", "{\"amount\":1000}", ParameterType.RequestBody);
-IRestResponse response = client.Execute(request);
+var capturesClient = new Dojo.Net.CapturesClient(new HttpClient(), new ApiKeyClientAuthorization("sk_sandbox_c8oLGaI__msxsXbpBDpdtwJEz_eIhfQoKHmedqgZPCdBx59zpKZLSk8OPLT0cZolbeuYJSBvzDVVsYvtpo5RkQ"));
+capturesClient.CreateAsync("<PAYMENT_INTENT_ID>", new CreateCaptureRequest
+{
+    Amount = 1000
+});
