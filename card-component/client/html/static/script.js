@@ -18,7 +18,7 @@ fetch('/checkout', {
     .then(function (data) {
         const config = {
             paymentDetails: {
-                paymentToken: data.paymentToken,  //connecteToken
+                paymentToken: data.clientSessionSecret,
             },
             containerId: "demo-payment",
             fontCss: ['https://fonts.googleapis.com/css?family=Do+Hyeon'],
