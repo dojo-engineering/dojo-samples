@@ -6,13 +6,9 @@ public class CheckoutController : ControllerBase
 {
     private readonly ILogger<CheckoutController> _logger;
     private readonly IPaymentIntentsClient _paymentIntentsClient;
-    private readonly string _webhookSecret;
 
-    public CheckoutController(IConfiguration configuration, ILogger<CheckoutController> logger, IPaymentIntentsClient paymentIntentsClient)
+    public CheckoutController(ILogger<CheckoutController> logger, IPaymentIntentsClient paymentIntentsClient)
     {
-        // do not store secrets as plain text in the config files, consider to use secret managers
-        _webhookSecret = configuration.GetSection("Dojo")["WebhookSecret"];
-
         _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         _paymentIntentsClient = paymentIntentsClient ?? throw new ArgumentNullException(nameof(paymentIntentsClient));
     }
