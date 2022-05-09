@@ -5,7 +5,8 @@
 ```shell
 dotnet run
 ```
-4. Test that the sample app is working by going to http://localhost:44488
+4. Test that the sample app is working by going to http://localhost:7095
+If everthing working fine you will be automatically redirected to http://localhost:44488.
 5. Run
 ```shell
 ngrok http 44488
