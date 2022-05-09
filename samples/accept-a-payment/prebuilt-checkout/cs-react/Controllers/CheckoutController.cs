@@ -20,13 +20,9 @@ public class CheckoutController : ControllerBase
 {
     private readonly ILogger<CheckoutController> _logger;
     private readonly IPaymentIntentsClient _paymentIntentsClient;
-    private readonly string _webhookSecret;
 
-    public CheckoutController(IConfiguration configuration, ILogger<CheckoutController> logger, IPaymentIntentsClient paymentIntentsClient)
+    public CheckoutController(ILogger<CheckoutController> logger, IPaymentIntentsClient paymentIntentsClient)
     {
-        // do not store secrets as plain text in the config files, consider to use secret managers
-        _webhookSecret = configuration.GetSection("Dojo")["WebhookSecret"];
-
         _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         _paymentIntentsClient = paymentIntentsClient ?? throw new ArgumentNullException(nameof(paymentIntentsClient));
     }
@@ -53,6 +49,50 @@ public class CheckoutController : ControllerBase
             }, cancellationToken);
 
             return result.Id;
+        }
+        catch (ApiClientException<ProblemDetails> e)
+        {
+            // Check Dojo Documentation for error handling https://docs.dojo.tech/api#section/Errors
+            _logger.LogError(e, $"StatusCode:{e.Result.Status}, Response: {e.Result.Detail}, TraceId: {e.Result.TraceId}");
+            throw;
+        }
+        catch (ApiClientException e)
+        {
+            _logger.LogError(e, "Unhandled error");
+            throw;
+        }
+    }
+
+    [HttpGet("{paymentIntentId}")]
+    public async Task<PaymentIntent> GetAsync(string paymentIntentId, CancellationToken cancellationToken)
+    {
+        try
+        {
+            var result = await _paymentIntentsClient.RefreshClientSessionSecretAsync(paymentIntentId, cancellationToken);
+
+            return result;
+        }
+        catch (ApiClientException<ProblemDetails> e)
+        {
+            // Check Dojo Documentation for error handling https://docs.dojo.tech/api#section/Errors
+            _logger.LogError(e, $"StatusCode:{e.Result.Status}, Response: {e.Result.Detail}, TraceId: {e.Result.TraceId}");
+            throw;
+        }
+        catch (ApiClientException e)
+        {
+            _logger.LogError(e, "Unhandled error");
+            throw;
+        }
+    }
+
+    [HttpPost("refresh-client-session/{paymentIntentId}")]
+    public async Task<string> RefreshClientSessionSecretAsync(string paymentIntentId, CancellationToken cancellationToken)
+    {
+        try
+        {
+            var result = await _paymentIntentsClient.RefreshClientSessionSecretAsync(paymentIntentId, cancellationToken);
+
+            return result.ClientSessionSecret;
         }
         catch (ApiClientException<ProblemDetails> e)
         {
