@@ -1,0 +1,145 @@
+/* Provide sufficient contrast against white background */
+a {
+  color: #0366d6;
+}
+
+* {
+  font-family: 'Roboto', sans-serif;;
+  font-style: normal;
+  font-weight: 400;
+}
+
+div, p {
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+}
+
+.App {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.App-header {
+  width: 100%;
+  height: 42px;
+  display: flex;
+  align-items: center;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.App-Container {
+  margin-top: 48px;
+  max-width: 800px;
+}
+
+button.checkout {
+  width: 400px;
+  height: 44px;
+
+  background: #262626;
+  border-radius: 40px;
+  margin-top: 32px;
+  font-size: 16px;
+  line-height: 24px;
+
+  color: #FFFFFF;
+  border: none;
+  cursor: pointer;
+}
+
+.image-placeholder {
+  width: 160px;
+  height: 160px;
+  background-size: cover;
+
+  background-image: url("./static/product1.png");
+}
+
+.checkout-details {
+  padding: 0 32px;
+  position: relative;
+}
+
+hr {
+  margin-top: 32px;
+}
+
+.order-details {
+  margin-top: 34px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  padding: 0;
+  margin: 0;
+}
+
+h2 {
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 48px;
+}
+
+h4 {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+}
+
+
+#number {
+  width: 103px;
+  height: 48px;
+}
+
+.summary {
+  padding: 0 24px;
+}
+
+label {
+  display: block;
+  font-size: 16px;
+  line-height: 24px;
+
+  color: rgba(0, 0, 0, 0.87);
+  margin-bottom: 4px;
+}
+
+p {
+  margin: 16px 0;
+}
+
+
+.totals {
+  margin-top: 56px;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.total {
+  font-weight: 500;
+}
+
+hr {
+  border: 1px solid #E5E5E5;
+  margin: 16px 0;
+}
+
+.subtotal, .total {
+  display: flex;
+  justify-content: space-between;
+}

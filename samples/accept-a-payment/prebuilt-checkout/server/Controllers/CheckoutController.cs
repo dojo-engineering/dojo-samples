@@ -39,6 +39,11 @@ public class CheckoutController : ControllerBase
                     Value = checkoutRequest.Amount,
                     CurrencyCode = "GBP"
                 },
+                Config = new PaymentIntentConfig()
+                {
+                    CancelUrl = new Uri(checkoutRequest.CancelUrl),
+                    RedirectUrl = new Uri(checkoutRequest.RedirectUrl),
+                },
                 PaymentMethods = new List<PaymentMethod>() { PaymentMethod.Card , PaymentMethod.Wallet},
                 Description = checkoutRequest.Description,
                 Reference = Guid.NewGuid().ToString() // can be you order id
