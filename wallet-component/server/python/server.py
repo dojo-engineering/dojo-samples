@@ -39,7 +39,7 @@ def hello():
             "currencyCode": "GBP"
           },
           "reference": "Order 245",
-          "paymentMethods": "Wallet"
+          "paymentMethods": ["Wallet"]
           })
         headers = {
             'content-type': "application/json",
