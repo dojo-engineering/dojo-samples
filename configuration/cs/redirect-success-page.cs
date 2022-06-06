@@ -8,7 +8,7 @@ var result = await paymentIntentsClient.CreatePaymentIntentAsync(new CreatePayme
     },
     Config = new()
     {
-        RedirectUrl = new Uri("http://site.com/checkout/success_pay"),
+        RedirectUrl = new Uri("http://mymerchantsite.com/checkout/success_pay"),
     },
     Reference = "Order-0001"
 });
