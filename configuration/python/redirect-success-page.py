@@ -9,7 +9,7 @@ payload = json.dumps({
     },
     "reference": "Order 245",
     "config": {
-        "redirectUrl": "http://site.com/checkout/success_pay",
+        "redirectUrl": "http://mymerchantsite.com/checkout/success_pay",
     }
 })
 headers = {

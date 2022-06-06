@@ -12,6 +12,6 @@ Invoke-WebRequest `
              "amount": { "value": 1000, "currencyCode": "GBP" },
              "reference": "Order-0001",
              "config": {
-               "redirectUrl": "http://site.com/checkout/success_pay"
+               "redirectUrl": "http://mymerchantsite.com/checkout/success_pay"
              }
           }'
