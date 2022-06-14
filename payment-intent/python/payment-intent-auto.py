@@ -7,23 +7,8 @@ payload = json.dumps({
     "value": 1000,
     "currencyCode": "GBP"
   },
-  "tipsAmount": {
-    "value": 10,
-    "currencyCode": "GBP"
-  },
   "reference": "Order 234",
-  "description": "Demo payment intent",
-  "captureMode": "Auto",
-  "details": {
-    "showTotal": "true",
-    "showReference": "true"
-  },
-  "config": {
-    "payment": {
-      "customAmountAllowed": "true",
-      "tipsAllowed": "true"
-    }
-  }
+  "captureMode": "Auto"
 })
 headers = {
   'version': '2022-05-26',
