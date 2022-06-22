@@ -7,7 +7,7 @@ payload = json.dumps({
         "value": 1000,
         "currencyCode": "GBP"
     },
-    "reference": "Order 245",
+    "reference": "Order-0001",
     "config": {
         "title": "The Company",
     }
