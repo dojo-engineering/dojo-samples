@@ -13,5 +13,5 @@ var result = await paymentIntentsClient.CreatePaymentIntentAsync(new CreatePayme
     },
     Description = checkoutRequest.Description,
     Reference = "Order - 1",
-    captureMode = captureMode.Manual
+    CaptureMode = CaptureMode.Manual
 });

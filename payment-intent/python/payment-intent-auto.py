@@ -7,11 +7,10 @@ payload = json.dumps({
     "value": 1000,
     "currencyCode": "GBP"
   },
-  "reference": "Order 234",
-  "captureMode": "Auto"
+  "reference": "Order 234"
 })
 headers = {
-  'version': '2022-05-26',
+  'version': '2022-04-07',
   'Content-Type': 'application/json',
   'Accept': 'application/json',
   'Authorization': 'Basic sk_sandbox_c8oLGaI__msxsXbpBDpdtwJEz_eIhfQoKHmedqgZPCdBx59zpKZLSk8OPLT0cZolbeuYJSBvzDVVsYvtpo5RkQ'
