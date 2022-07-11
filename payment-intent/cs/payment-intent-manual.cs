@@ -3,7 +3,7 @@ var result = await paymentIntentsClient.CreatePaymentIntentAsync(new CreatePayme
 {
     Amount = new()
     {
-        Value = checkoutRequest.Amount,
+        Value = 1000,
         CurrencyCode = "GBP"
     },
     Config = new()
@@ -11,7 +11,7 @@ var result = await paymentIntentsClient.CreatePaymentIntentAsync(new CreatePayme
         CancelUrl = new Uri(checkoutRequest.CancelUrl),
         RedirectUrl = new Uri(checkoutRequest.RedirectUrl),
     },
-    Description = checkoutRequest.Description,
+    Description = "Demo payment intent",
     Reference = "Order - 1",
     CaptureMode = CaptureMode.Manual
 });
