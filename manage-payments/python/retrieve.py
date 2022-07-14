@@ -1,4 +1,5 @@
 import http.client
+import json
 
 conn = http.client.HTTPSConnection("api.dojo.tech")
 
@@ -11,5 +12,7 @@ conn.request("GET", "/payment-intents/%7BpaymentIntentId%7D", headers=headers)
 
 res = conn.getresponse()
 data = res.read()
+resp_data = {}
+resp_data['status'] = json.loads(data)["status"]
 
-print(data.decode("utf-8"))
+print(resp_data)
