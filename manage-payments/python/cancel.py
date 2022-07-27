@@ -12,4 +12,5 @@ res = conn.getresponse()
 data = res.read()
 
 print(data.decode("utf-8"))
+
 conn.close()
