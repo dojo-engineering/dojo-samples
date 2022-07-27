@@ -8,7 +8,7 @@ headers = {
     'Authorization': "Basic sk_sandbox_c8oLGaI__msxsXbpBDpdtwJEz_eIhfQoKHmedqgZPCdBx59zpKZLSk8OPLT0cZolbeuYJSBvzDVVsYvtpo5RkQ"
     }
 
-conn.request("GET", "/payment-intents/%7BpaymentIntentId%7D", headers=headers)
+conn.request("GET", f"/payment-intents/{paymentIntentId}", headers=headers)
 
 res = conn.getresponse()
 data = res.read()
@@ -16,3 +16,4 @@ resp_data = {}
 resp_data['status'] = json.loads(data)["status"]
 
 print(resp_data)
+conn.close()

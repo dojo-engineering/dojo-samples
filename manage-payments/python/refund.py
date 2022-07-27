@@ -11,7 +11,7 @@ headers = {
     'Authorization': "Basic sk_sandbox_c8oLGaI__msxsXbpBDpdtwJEz_eIhfQoKHmedqgZPCdBx59zpKZLSk8OPLT0cZolbeuYJSBvzDVVsYvtpo5RkQ"
     }
 
-conn.request("POST", "/payment-intents/%7BpaymentIntentId%7D/refunds", payload, headers)
+conn.request("POST", f"/payment-intents/{paymentIntentId}/refunds", payload, headers)
 
 res = conn.getresponse()
 data = res.read()

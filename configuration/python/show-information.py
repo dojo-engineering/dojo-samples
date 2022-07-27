@@ -50,7 +50,7 @@ payload = json.dumps({
     "config": {
         "details":
         {
-            "showTotal": true
+            "showTotal": True
         }
     }
 })
@@ -63,3 +63,4 @@ conn.request("POST", "/payment-intents", payload, headers)
 res = conn.getresponse()
 data = res.read()
 print(data.decode("utf-8"))
+conn.close()

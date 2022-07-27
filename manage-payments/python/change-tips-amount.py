@@ -10,9 +10,10 @@ headers = {
     'Authorization': "Basic sk_sandbox_c8oLGaI__msxsXbpBDpdtwJEz_eIhfQoKHmedqgZPCdBx59zpKZLSk8OPLT0cZolbeuYJSBvzDVVsYvtpo5RkQ"
     }
 
-conn.request("POST", "/payment-intents/%7BpaymentIntentId%7D/tips-amount", payload, headers)
+conn.request("POST", f"/payment-intents/{paymentIntentId}/tips-amount", payload, headers)
 
 res = conn.getresponse()
 data = res.read()
 
 print(data.decode("utf-8"))
+conn.close()
