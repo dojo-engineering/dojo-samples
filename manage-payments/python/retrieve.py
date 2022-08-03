@@ -16,3 +16,5 @@ resp_data = {}
 resp_data['status'] = json.loads(data)["status"]
 
 print(resp_data)
+
+conn.close()
