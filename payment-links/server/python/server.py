@@ -32,3 +32,5 @@ def hello():
     last_id = json.loads(data)["id"]
     url = 'https://pay.dojo.tech/checkout/' + last_id
     return redirect(url)
+
+    conn.close()

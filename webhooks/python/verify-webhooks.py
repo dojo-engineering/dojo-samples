@@ -33,4 +33,4 @@ def webhook():
         print('⚠️  Webhook error while parsing basic request.' + str(e))
         return jsonify(success=False)
 
-    
+    conn.close()
