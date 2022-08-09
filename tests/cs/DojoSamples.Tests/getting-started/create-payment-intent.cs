@@ -10,8 +10,7 @@ namespace DojoSamples.Tests.getting_started
         [Fact]
         public async void TestSnippet()
         {
-            var script = Path.GetRelativePath(".", "../../../../../../getting-started/cs/create-payment-intent.cs");
-            PaymentIntent result = await new CodeSnippet().Run(script);
+            PaymentIntent result = await CodeSnippet.Run("getting-started/cs/create-payment-intent.cs");
             Assert.True(result.Id.Length > 0, "Expected a payment intent id in response");
         }
     }

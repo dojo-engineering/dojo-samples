@@ -5,11 +5,13 @@ using Dojo.Net;
 
 namespace DojoSamples.Tests.utils
 {
-    public class CodeSnippet
+    public static class CodeSnippet
     {
-        public async Task<dynamic> Run(string script, string id = "")
+        public static async Task<dynamic> Run(string script, string id = "")
         {
-            var codeString = File.ReadAllText(script);
+            var path = Path.GetRelativePath(".", $"../../../../../../{script}");
+
+            var codeString = File.ReadAllText(path);
 
             if (id.Length > 0)
             {

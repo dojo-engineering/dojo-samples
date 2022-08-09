@@ -13,8 +13,8 @@ namespace DojoSamples.Tests.manage_payments
             var paymentIntent = await Intent.CreateIntent();
             Assert.True(paymentIntent.Id.Length > 0, "Expected payment intent to be created");
             
-            var script = Path.GetRelativePath(".", "../../../../../../manage-payments/cs/change-amount.cs");
-            PaymentIntent result = await new CodeSnippet().Run(script, paymentIntent.Id);
+            var script = Path.GetRelativePath(".", "../../../../../../");
+            PaymentIntent result = await CodeSnippet.Run("manage-payments/cs/change-amount.cs", paymentIntent.Id);
             Assert.True(result.Id.Length > 0, "Expected payment intent ID");
             Assert.Equal("Created", result.Status.ToString());
             Assert.Equal(500, result.Amount.Value);
