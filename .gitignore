@@ -24,6 +24,7 @@ Bin/
 obj/
 Obj/
 .idea
+*.iml
 .DS_Store
 .cache
 
@@ -236,3 +237,7 @@ Dojo.Net
 Dojo.Net/**
 openapi/libs
 samples/openapi/libs/Dojo.Net/Webhooks/WebhookPayload.cs
+
+# Generated files
+tests/report.html
+__pycache__

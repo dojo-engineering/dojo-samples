@@ -50,7 +50,7 @@ payload = json.dumps({
     "config": {
         "details":
         {
-            "showTotal": true
+            "showTotal": True
         }
     }
 })
