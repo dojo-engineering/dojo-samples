@@ -15,7 +15,7 @@ payload = json.dumps({
   "reference": "Order 234"
 })
 headers = {
-  'version': '2022-07-04',
+  'version': '2023-01-30',
   'Content-Type': 'application/json',
   'Accept': 'application/json',
   'Authorization': 'Basic sk_sandbox_c8oLGaI__msxsXbpBDpdtwJEz_eIhfQoKHmedqgZPCdBx59zpKZLSk8OPLT0cZolbeuYJSBvzDVVsYvtpo5RkQ'
