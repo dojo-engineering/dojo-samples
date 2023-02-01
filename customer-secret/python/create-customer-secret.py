@@ -6,7 +6,7 @@ payload = ''
 headers = {
   'version': '2023-01-10',
   'Accept': 'application/json',
-  'Authorization': 'Basic sk_sandbox_c8oLGaI__msxsXbpBDpdtwJEz_eIhfQoKHmedqgZPCdBx59zpKZLSk8OPLT0cZolbeuYJSBvzDVVsYvtpo5RkQ'
+  'Authorization': 'Basic sk_sandbox_<your_secret_key>'
 }
 conn.request("POST", "/customers/cust_sandbox_6g-HvPv6VkG_Q_PXCpJqmw/create-secret", payload, headers) #"/customers/{customer-secret id you created}/create-secret
 res = conn.getresponse()

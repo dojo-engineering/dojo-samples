@@ -10,7 +10,7 @@ conn = http.client.HTTPSConnection("api.dojo.tech")
 
 headers = {
     'version': "2022-04-07",
-    'Authorization': "Basic sk_sandbox_c8oLGaI__msxsXbpBDpdtwJEz_eIhfQoKHmedqgZPCdBx59zpKZLSk8OPLT0cZolbeuYJSBvzDVVsYvtpo5RkQ"
+    'Authorization': "Basic sk_sandbox_<your_secret_key>"
     }
 
 conn.request("GET", f"/payment-intents/{paymentIntentId}", headers=headers)

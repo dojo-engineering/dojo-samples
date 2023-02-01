@@ -3,5 +3,5 @@
 // Sign in to developer.dojo.tech to create your own private sandbox key and use that instead
 // for secure testing.
 
-var paymentIntentsClient = new PaymentIntentsClient(new HttpClient(), new ApiKeyClientAuthorization("sk_sandbox_c8oLGaI__msxsXbpBDpdtwJEz_eIhfQoKHmedqgZPCdBx59zpKZLSk8OPLT0cZolbeuYJSBvzDVVsYvtpo5RkQ"));
+var paymentIntentsClient = new PaymentIntentsClient(new HttpClient(), new ApiKeyClientAuthorization("sk_sandbox_<your_secret_key>"));
 var result = await paymentIntentsClient.DeleteAsync("<PAYMENT_INTENT_ID>");
