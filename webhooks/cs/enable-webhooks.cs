@@ -3,7 +3,7 @@ Don’t submit any personally identifiable information in any requests made with
 Sign in to developer.dojo.tech to create your own private sandbox key and use that instead
 for secure testing. */
 
-var webhooksClient = new Dojo.Net.WebhooksClient(new HttpClient(), new ApiKeyClientAuthorization("sk_sandbox_<your_secret_key>"));
+var webhooksClient = new Dojo.Net.WebhooksClient(new HttpClient(), new ApiKeyClientAuthorization("sk_sandbox_c8oLGaI__msxsXbpBDpdtwJEz_eIhfQoKHmedqgZPCdBx59zpKZLSk8OPLT0cZolbeuYJSBvzDVVsYvtpo5RkQ"));
 webhooksClient.SubscribeAsync(new SubscriptionRequest()
 {
     Events = new List<string>() { "payment_intent.status_updated" },

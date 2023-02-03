@@ -19,7 +19,7 @@ headers = {
   'version': '2022-07-04',
   'Content-Type': 'application/json',
   'Accept': 'application/json',
-  'Authorization': 'Basic sk_sandbox_<your_secret_key>'
+  'Authorization': 'Basic sk_sandbox_c8oLGaI__msxsXbpBDpdtwJEz_eIhfQoKHmedqgZPCdBx59zpKZLSk8OPLT0cZolbeuYJSBvzDVVsYvtpo5RkQ'
 }
 conn.request("POST", "/payment-intents/", payload, headers)
 res = conn.getresponse()
