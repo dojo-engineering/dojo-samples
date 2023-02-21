@@ -12,7 +12,7 @@ payload = "{\"emails\":[\"gabriel@dojo.com\",\"mari@dojo.com\"]}"
 headers = {
     'content-type': "application/json",
     'version': "SOME_STRING_VALUE",
-    'Authorization': "Basic REPLACE_BASIC_AUTH"
+    'Authorization': "Basic sk_sandbox_<your_secret_key>"
     }
 
 conn.request("POST", "/payment-intents/%7BpaymentIntentId%7D/receipt", payload, headers)
