@@ -16,5 +16,4 @@ Invoke-WebRequest `
                 }, 
             "reference": "Order 234", 
             "transactionSource": "MOTO",
-            "description": "Virtual terminal demo",
             }'
