@@ -11,7 +11,6 @@ var result = await paymentIntentsClient.CreatePaymentIntentAsync(new CreatePayme
         Value = 1000,
         CurrencyCode = "GBP"
     },
-    Description = "Demo payment intent",
     Reference = "Order 234",
     TransactionSource = TransactionSource.MOTO
 });
