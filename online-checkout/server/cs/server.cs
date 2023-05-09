@@ -13,6 +13,5 @@ var result = await paymentIntentsClient.CreatePaymentIntentAsync(new CreatePayme
         Value = 1000,
         CurrencyCode = "GBP"
     },
-    Reference = "Order 245",
-    CaptureMode = CaptureMode.Auto,
+    Reference = "Order 245"
 });
