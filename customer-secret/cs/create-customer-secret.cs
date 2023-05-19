@@ -8,4 +8,4 @@ using Dojo.Net;
 using System.Text.Json;
 
 var customersClient = new CustomersClient(new HttpClient(), new ApiKeyClientAuthorization("sk_sandbox_c8oLGaI__msxsXbpBDpdtwJEz_eIhfQoKHmedqgZPCdBx59zpKZLSk8OPLT0cZolbeuYJSBvzDVVsYvtpo5RkQ"));
-var result = await customersClient.CreateCustomerSecretAsync("<Customer-id>");
+var result = await customersClient.CreateCustomerSecretAsync("<CUSTOMER_ID>");
