@@ -13,7 +13,9 @@ Invoke-WebRequest `
                 { 
                     "value": 1000, 
                     "currencyCode": "GBP" 
-                }, 
+                },
+            "autoExpireAt": "2023-12-01T00:00:00",
+            "autoExpireAction": "Release",
             "reference": "Order 234", 
             "description": "Demo payment intent", 
             "captureMode": "Manual" 
