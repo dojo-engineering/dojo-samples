@@ -8,9 +8,12 @@ curl -v --request POST \
     --header 'content-type: application/json' \
     --header 'Authorization: Basic sk_sandbox_c8oLGaI__msxsXbpBDpdtwJEz_eIhfQoKHmedqgZPCdBx59zpKZLSk8OPLT0cZolbeuYJSBvzDVVsYvtpo5RkQ' \
     --header 'version: 2022-07-04' \
-    --data '{"captureMode":"Manual",
+    --data '{
+            "captureMode":"Manual",
             "autoExpireAt": "2023-12-01T00:00:00",
             "autoExpireAction": "Release",
-            "amount":{"value":1000,"currencyCode":"GBP"},
+            "amount":{
+                "value":1000,"currencyCode":"GBP"
+                },
             "reference":"Order-0001"
             }'

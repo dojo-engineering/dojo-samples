@@ -9,8 +9,8 @@ Invoke-WebRequest `
     -Method POST `
     -Headers @{ "version" = "2022-07-04"; "Authorization" = "Basic $publicSandboxKey" } `
     -ContentType 'application/json' `
-    -Body '{ "amount": 
-                { 
+    -Body '{ 
+            "amount": { 
                     "value": 1000, 
                     "currencyCode": "GBP" 
                 },
