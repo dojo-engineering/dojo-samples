@@ -1,3 +1,8 @@
+# The sandbox API key passed in 'authorization' is public.
+# Don't submit any personally identifiable information in any requests made with this key.
+# Sign in to developer.dojo.tech to create your own private sandbox key and use that instead
+# for secure testing.
+
 from hashlib import new
 import http.client
 import json
@@ -80,3 +85,5 @@ def webhook():
 def test_page():
   # look inside `templates` and serve `index.html`
   return render_template('index.html')
+
+  conn.close()

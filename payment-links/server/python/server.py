@@ -1,3 +1,8 @@
+# The sandbox API key passed in 'authorization' is public.
+# Don't submit any personally identifiable information in any requests made with this key.
+# Sign in to developer.dojo.tech to create your own private sandbox key and use that instead
+# for secure testing.
+
 import http.client
 import json
 from urllib import response
@@ -32,3 +37,5 @@ def hello():
     last_id = json.loads(data)["id"]
     url = 'https://pay.dojo.tech/checkout/' + last_id
     return redirect(url)
+
+    conn.close()

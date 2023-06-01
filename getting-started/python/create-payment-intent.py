@@ -1,3 +1,8 @@
+# The sandbox API key passed in 'authorization' is public.
+# Don't submit any personally identifiable information in any requests made with this key.
+# Sign in to developer.dojo.tech to create your own private sandbox key and use that instead
+# for secure testing.
+
 import http.client
 import json
 
@@ -18,3 +23,5 @@ conn.request("POST", "/payment-intents", payload, headers)
 res = conn.getresponse()
 data = res.read()
 print(data.decode("utf-8"))
+
+conn.close()

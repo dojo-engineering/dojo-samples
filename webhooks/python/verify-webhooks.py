@@ -18,7 +18,7 @@ def webhook():
         print('Received webhooks...')
         print(event)
         # signature verification
-        secret = "ws_ZcLv5J2H10eqH15dMjKI2A"
+        secret = "PDYkJQq6sESYHp_zJuTTBQ"
         signatureHeader = request.header.get('Dojo-Signature')
 
         signature = hmac.new(secret, str(payload))
@@ -33,4 +33,4 @@ def webhook():
         print('⚠️  Webhook error while parsing basic request.' + str(e))
         return jsonify(success=False)
 
-    
+    conn.close()
