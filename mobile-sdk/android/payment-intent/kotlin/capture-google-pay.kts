@@ -1,14 +1,15 @@
 // get the PaymentHandler
-val dojoPayUI = DojoSDKDropInUI.createUIPaymentHandler(this) { result -> showResult(result) }
+val dojoPayUI =
+    DojoSDKDropInUI.createUIPaymentHandler(this) { result ->
+        // handle result
+        Toast.makeText(this, result.name, Toast.LENGTH_SHORT).show()
+    }
+
 // on pay clicked
 dojoPayUI.startPaymentFlow(
-  DojoPaymentFlowParams(
-      paymentId= "pi_sandbox_RBMHTJ4fIkmSppDILZVCGw", //switch to production key when going live.
-      // add this to enable Google Pay support
-      GPayConfig = DojoGPayConfig(
-          merchantName = "",
-          merchantId = "",
-          gatewayMerchantId = ""
-      )
-  )
+    DojoPaymentFlowParams(
+        paymentId = "pi_sandbox_RBMHTJ4fIkmSppDILZVCGw",
+        // add this to enable Google Pay support
+        GPayConfig = DojoGPayConfig(merchantName = "", merchantId = "", gatewayMerchantId = "")
+    )
 )
