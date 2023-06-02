@@ -1,6 +1,6 @@
-[self.dojoUI startPaymentFlowWithPaymentIntentId:@"paymentIntentId"
+[self.dojoUI startPaymentFlowWithPaymentIntentId:@"<paymentIntentId>"
                                       controller:self
-                                  customerSecret:@"customer secret"
+                                  customerSecret:@"<secret>" // Customer secret key
                                   applePayConfig:nil
                                    themeSettings:nil
                                       completion:^(NSInteger result) {

@@ -14,15 +14,15 @@ DojoGPayConfig dojoGPayConfig = new DojoGPayConfig(
     false,
     false,
     false,
-    "merchantName",
-    "merchantId",
-    "gatewayMerchantId",
+    "<Merchant_Name>",
+    "<Merchant_Id>",
+    "<Gateway_Merchant_Id>",
     new ArrayList < > ()
 );
 // on Pay tapped
 dojoPaymentFlowHandler.startPaymentFlow(
     new DojoPaymentFlowParams(
-        "pi_sandbox_RBMHTJ4fIkmSppDILZVCGw", //switch to production key when going live.
+        "<paymentIntentId>",
         null, // add this if you support saved card, else pass null
-        dojoGPayConfig // Google Pay support
+        dojoGPayConfig // when you support Google Pay
     ));

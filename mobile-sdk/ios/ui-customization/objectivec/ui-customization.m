@@ -7,4 +7,4 @@ lightTheme.primaryLabelTextColor = [UIColor red];
 
 // Pass the desired theme to the SDK when starting the payment flow
 DojoSDKDropInUI *dojoUI = [[DojoSDKDropInUI alloc] init];
-[dojoUI startPaymentFlowWithPaymentIntentId:@"-" themeSettings:darkTheme];
+[dojoUI startPaymentFlowWithPaymentIntentId:@"<paymentIntentId>" themeSettings:darkTheme];

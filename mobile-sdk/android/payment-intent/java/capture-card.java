@@ -10,7 +10,7 @@ private final DojoPaymentFlowHandler dojoPaymentFlowHandler = DojoSDKDropInUI.IN
 // on Pay tapped
 dojoPaymentFlowHandler.startPaymentFlow(
     new DojoPaymentFlowParams(
-        "pi_sandbox_RBMHTJ4fIkmSppDILZVCGw",
+        "<paymentIntentId>",
         null, // add this if you support saved card, else pass null
         null // add this if you support Google Pay, else pass null
     ));

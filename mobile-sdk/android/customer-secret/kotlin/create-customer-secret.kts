@@ -8,7 +8,7 @@ val dojoPayUI =
 // on "Pay" tapped
 dojoPayUI.startPaymentFlow(
     DojoPaymentFlowParams(
-        paymentId = "pi_sandbox_RBMHTJ4fIkmSppDILZVCGw",
-        clientSecret = "<customer secret key>"
+        paymentId = "<paymentIntentId>",
+        clientSecret = "<secret>"// Customer secret key
     )
 )

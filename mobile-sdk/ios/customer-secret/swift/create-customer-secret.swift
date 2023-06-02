@@ -1,7 +1,7 @@
 dojoUI.startPaymentFlow(
-  paymentIntentId: "paymentIntentId",
+  paymentIntentId: "<paymentIntentId>",
   controller: self,
-  customerSecret: "customer secret"
+  customerSecret: "<secret>" // Customer secret key
 ) { result in
   print(result)
 }

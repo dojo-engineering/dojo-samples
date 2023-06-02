@@ -8,8 +8,8 @@ val dojoPayUI =
 // on pay clicked
 dojoPayUI.startPaymentFlow(
     DojoPaymentFlowParams(
-        paymentId = "pi_sandbox_RBMHTJ4fIkmSppDILZVCGw",
+        paymentId = "<paymentIntentId>",
         // add this to enable Google Pay support
-        GPayConfig = DojoGPayConfig(merchantName = "", merchantId = "", gatewayMerchantId = "")
+        GPayConfig = DojoGPayConfig(merchantName = "<Merchant_Name>", merchantId = "<Merchant_Id>", gatewayMerchantId = "<Gateway_Merchant_Id>")
     )
 )

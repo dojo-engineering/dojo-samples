@@ -6,4 +6,4 @@ val dojoPayUI =
     }
 
 // on Pay tapped
-dojoPayUI.startPaymentFlow(DojoPaymentFlowParams(paymentId = "pi_sandbox_RBMHTJ4fIkmSppDILZVCGw"))
+dojoPayUI.startPaymentFlow(DojoPaymentFlowParams(paymentId = "<paymentIntentId>"))

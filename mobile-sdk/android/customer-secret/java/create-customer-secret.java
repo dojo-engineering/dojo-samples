@@ -10,7 +10,7 @@ private final DojoPaymentFlowHandler dojoPaymentFlowHandler = DojoSDKDropInUI.IN
 // on "Pay" tapped
 dojoPaymentFlowHandler.startPaymentFlow(
     new DojoPaymentFlowParams(
-        "pi_sandbox_RBMHTJ4fIkmSppDILZVCGw",
-        "<customer secret key>",
+        "<paymentIntentId>",
+        "<secret>"// Customer secret key
         null
     ));

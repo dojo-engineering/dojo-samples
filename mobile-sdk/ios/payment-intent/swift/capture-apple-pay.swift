@@ -1,7 +1,7 @@
 dojoUI.startPaymentFlow(
-  paymentIntentId: "payment-intent-id",
+  paymentIntentId: "<paymentIntentId>",
   controller: self,
-  applePayConfig: DojoUIApplePayConfig(merchantIdentifier: "merchant-identifier")
+  applePayConfig: DojoUIApplePayConfig(merchantIdentifier: "<Merchant_Identifier>")
 ) { result in
   print(result)
 }
