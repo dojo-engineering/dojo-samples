@@ -4,8 +4,12 @@
 # for secure testing.
 
 $publicSandboxKey = "sk_sandbox_c8oLGaI__msxsXbpBDpdtwJEz_eIhfQoKHmedqgZPCdBx59zpKZLSk8OPLT0cZolbeuYJSBvzDVVsYvtpo5RkQ"
+
 Invoke-WebRequest `
     -Uri 'https://api.dojo.tech/customers/cust_sandbox_6g-HvPv6VkG_Q_PXCpJqmw/create-secret' `
     -Method POST `
-    -Headers @{ "version" = "2022-04-07"; "Authorization" = "Basic $publicSandboxKey" } `
+    -Headers @{
+        "Version" = "2022-04-07"
+        "Authorization" = "Basic $publicSandboxKey"
+    } `
     -ContentType 'application/json'
