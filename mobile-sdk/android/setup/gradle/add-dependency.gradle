@@ -1,0 +1,5 @@
+dependencies {
+    ...
+    implementation ("tech.dojo.pay:sdk:1.4.6")
+    implementation ("tech.dojo.pay:uisdk:1.1.4")
+}
