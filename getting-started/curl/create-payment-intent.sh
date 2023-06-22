@@ -19,5 +19,3 @@ curl -v --request POST \
         "Wallet"
       ]
     }'
-
-
