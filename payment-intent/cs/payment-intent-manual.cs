@@ -13,5 +13,7 @@ var result = await paymentIntentsClient.CreatePaymentIntentAsync(new CreatePayme
     },
     Description = "Demo payment intent",
     Reference = "Order - 1",
-    CaptureMode = CaptureMode.Manual
+    CaptureMode = CaptureMode.Manual,
+    AutoExpireAt = DateTime.UtcNow.AddDays(7), // Dojo supports maximum 7 days.
+    AutoExpireAction = AutoExpireAction.Release
 });
