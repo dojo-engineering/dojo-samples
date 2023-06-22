@@ -4,9 +4,16 @@
 # for secure testing.
 
 $publicSandboxKey = "sk_sandbox_c8oLGaI__msxsXbpBDpdtwJEz_eIhfQoKHmedqgZPCdBx59zpKZLSk8OPLT0cZolbeuYJSBvzDVVsYvtpo5RkQ"
+
 Invoke-WebRequest `
     -Uri 'https://api.dojo.tech/webhooks' `
     -Method POST `
-    -Headers @{ "version" = "2022-04-07"; "Authorization" = "Basic $publicSandboxKey" } `
+    -Headers @{
+        "version" = "2022-04-07"
+        "Authorization" = "Basic $publicSandboxKey"
+    } `
     -ContentType 'application/json' `
-    -Body '{ "events": [ "payment_intent.status_updated" ], "url": "https://example.com/incoming-events" }'
+    -Body '{
+        "events": [ "payment_intent.status_updated" ],
+        "url": "https://example.com/incoming-events"
+    }'
