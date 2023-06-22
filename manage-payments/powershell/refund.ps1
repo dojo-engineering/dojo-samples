@@ -9,6 +9,14 @@ $publicSandboxKey = "sk_sandbox_c8oLGaI__msxsXbpBDpdtwJEz_eIhfQoKHmedqgZPCdBx59z
 Invoke-WebRequest `
     -Uri 'https://api.dojo.tech/payment-intents/<PAYMENT_INTENT_ID>/refunds' `
     -Method POST `
-    -Headers @{ "version" = "2022-04-07"; "Authorization" = "Basic $publicSandboxKey"; "idempotencyKey" = "656565gfyd65" } `
+    -Headers @{
+        "Version" = "2022-04-07"
+        "Authorization" = "Basic $publicSandboxKey"
+        "IdempotencyKey" = "656565gfyd65"
+    } `
     -ContentType 'application/json' `
-    -Body '{ "amount": 1000, "refundReason": "Demo refund", "notes": "Duplicate transaction" }'
+    -Body '{
+        "amount": 1000,
+        "refundReason": "Demo refund",
+        "notes": "Duplicate transaction"
+    }'
