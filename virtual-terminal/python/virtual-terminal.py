@@ -16,13 +16,12 @@ payload = json.dumps({
     "transactionSource": "MOTO"
 })
 headers = {
-    'content-type': "application/json",
-    'version': "2022-04-07",
-    'authorization': "Basic sk_sandbox_c8oLGaI__msxsXbpBDpdtwJEz_eIhfQoKHmedqgZPCdBx59zpKZLSk8OPLT0cZolbeuYJSBvzDVVsYvtpo5RkQ"  # <-- Change to your secret key
+    'Content-Type': "application/json",
+    'Version': "2022-04-07",
+    'Authorization': "Basic sk_sandbox_c8oLGaI__msxsXbpBDpdtwJEz_eIhfQoKHmedqgZPCdBx59zpKZLSk8OPLT0cZolbeuYJSBvzDVVsYvtpo5RkQ"  # <-- Change to your secret key
 }
 conn.request("POST", "/payment-intents/", payload, headers)
 res = conn.getresponse()
 data = res.read()
-last_id = json.loads(data)["id"]
-url = 'https://pay.dojo.tech/checkout/' + last_id
+
 conn.close()

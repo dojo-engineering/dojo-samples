@@ -8,6 +8,11 @@ curl -v --request POST \
     --header 'content-type: application/json' \
     --header 'authorization: Basic sk_sandbox_c8oLGaI__msxsXbpBDpdtwJEz_eIhfQoKHmedqgZPCdBx59zpKZLSk8OPLT0cZolbeuYJSBvzDVVsYvtpo5RkQ' \
     --header 'version: 2022-07-04' \
-    --data '{"amount":{"value":1000,"currencyCode":"GBP"},
-                "reference":"Order 234","transactionSource": "MOTO"
-                }'
+    --data '{
+        "amount":{
+            "value":1000,
+            "currencyCode":"GBP"
+        },
+        "reference":"Order 234",
+        "transactionSource": "MOTO"
+    }'
