@@ -4,37 +4,40 @@
 # for secure testing.
 
 curl -v --request POST \
-     --url https://api.dojo.tech/payment-intents \
-     --header 'content-type: application/json' \
-     --header 'authorization: Basic sk_sandbox_c8oLGaI__msxsXbpBDpdtwJEz_eIhfQoKHmedqgZPCdBx59zpKZLSk8OPLT0cZolbeuYJSBvzDVVsYvtpo5RkQ' \
-     --header 'version: 2022-04-07' \
-     --data '{
-           "amount": {"value": 4000, "currencyCode": "GBP"},
-           "reference": "Order-0001",
-           "itemLines": [
-                {
-                    "id": "item 1",
-                    "caption": "Baseball hat",
-                    "amountTotal": {
-                        "value": 1200,
-                        "currencyCode": "GBP"
-                    }
-                },
-                {
-                    "id": "item 2",
-                    "caption": "Baseball ball",
-                    "amountTotal": {
-                        "value": 350,
-                        "currencyCode": "GBP"
-                    }
-                },
-                {
-                    "id": "item 3",
-                    "caption": "Baseball bat",
-                    "amountTotal": {
-                        "value": 2500,
-                        "currencyCode": "GBP"
-                    }
-                }
-           ]
-     }'
+  --url https://api.dojo.tech/payment-intents \
+  --header 'content-type: application/json' \
+  --header 'authorization: Basic sk_sandbox_c8oLGaI__msxsXbpBDpdtwJEz_eIhfQoKHmedqgZPCdBx59zpKZLSk8OPLT0cZolbeuYJSBvzDVVsYvtpo5RkQ' \
+  --header 'version: 2022-04-07' \
+  --data '{
+    "amount": {
+      "value": 4000,
+      "currencyCode": "GBP"
+    },
+    "reference": "Order-0001",
+    "itemLines": [
+      {
+        "id": "item 1",
+        "caption": "Baseball hat",
+        "amountTotal": {
+          "value": 1200,
+          "currencyCode": "GBP"
+        }
+      },
+      {
+        "id": "item 2",
+        "caption": "Baseball ball",
+        "amountTotal": {
+          "value": 350,
+          "currencyCode": "GBP"
+        }
+      },
+      {
+        "id": "item 3",
+        "caption": "Baseball bat",
+        "amountTotal": {
+          "value": 2500,
+          "currencyCode": "GBP"
+        }
+      }
+    ]
+  }'

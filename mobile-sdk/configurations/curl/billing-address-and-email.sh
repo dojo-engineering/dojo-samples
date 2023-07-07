@@ -4,16 +4,23 @@
 # for secure testing.
 
 curl -v --request POST \
-     --url https://api.dojo.tech/payment-intents \
-     --header 'content-type: application/json' \
-     --header 'authorization: Basic sk_sandbox_kqCwRaWEsl9OM0xNSxh00eayT9k8hAqURGeNQseeV62rMxO5ZiZHub0-XRqkzPLfES2fVUl0seMOyujCIiYaMTaDyiBPf25b7W3Gr3oE0qbpTeM4MRuUMgtDt_scAEfJdqYBlBB_gt_31Bw7FihTISp2WIXXGeTD5WbwhdIhraIJVWR7jo2Hy-xKlBpK-lE8' \
-     --header 'version: 2022-04-07' \
-     --data '{
-           "amount": {"value": 1000, "currencyCode": "GBP"},
-           "reference": "Order-0001",
-           "config": {
-                "customerEmail": {"collectionRequired": true},
-                "billingAddress": {"collectionRequired": true}
-           }
-     }'
+  --url https://api.dojo.tech/payment-intents \
+  --header 'Content-Type: application/json' \
+  --header 'Authorization: Basic sk_sandbox_kqCwRaWEsl9OM0xNSxh00eayT9k8hAqURGeNQseeV62rMxO5ZiZHub0-XRqkzPLfES2fVUl0seMOyujCIiYaMTaDyiBPf25b7W3Gr3oE0qbpTeM4MRuUMgtDt_scAEfJdqYBlBB_gt_31Bw7FihTISp2WIXXGeTD5WbwhdIhraIJVWR7jo2Hy-xKlBpK-lE8' \
+  --header 'Version: 2022-04-07' \
+  --data '{
+    "amount": {
+      "value": 1000,
+      "currencyCode": "GBP"
+    },
+    "reference": "Order-0001",
+    "config": {
+      "customerEmail": {
+        "collectionRequired": true
+      },
+      "billingAddress": {
+        "collectionRequired": true
+      }
+    }
+  }'
 
