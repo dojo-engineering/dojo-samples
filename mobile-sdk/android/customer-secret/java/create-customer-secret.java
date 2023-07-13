@@ -7,10 +7,9 @@ private final DojoPaymentFlowHandler dojoPaymentFlowHandler = DojoSDKDropInUI.IN
         return Unit.INSTANCE;
     }));
 
-// On "Pay" tapped
+// On "Pay" clicked
 dojoPaymentFlowHandler.startPaymentFlow(
     new DojoPaymentFlowParams(
         "<paymentIntentId>",
-        "<secret>",// Customer secret key
-        null
+        "<customer secret key>"
     ));

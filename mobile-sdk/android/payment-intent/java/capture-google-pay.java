@@ -9,17 +9,11 @@ private final DojoPaymentFlowHandler dojoPaymentFlowHandler = DojoSDKDropInUI.IN
 
 // Define dojoGPayConfig object  
 DojoGPayConfig dojoGPayConfig = new DojoGPayConfig(
-    false, // collectShipping
-    null, // allowedCountryCodesForShipping
-    false, // collectBilling
-    false, // collectEmailAddress
-    false, // collectPhoneNumber
     "<Merchant_Name>",
     "<Merchant_Id>",
-    "<Gateway_Merchant_Id>",
-    new ArrayList < > ()
+    "<Gateway_Merchant_Id>"
 );
-// On Pay tapped
+// On Pay clicked
 dojoPaymentFlowHandler.startPaymentFlow(
     new DojoPaymentFlowParams(
         "<paymentIntentId>",
