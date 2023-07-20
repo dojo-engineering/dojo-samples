@@ -1,7 +1,7 @@
 // Get the PaymentHandler
 private final DojoPaymentFlowHandler dojoPaymentFlowHandler = DojoSDKDropInUI.INSTANCE.createUIPaymentHandler(
     this,
-    ((dojoPaymentResult) - > {
+    ((dojoPaymentResult) -> {
         Toast.makeText(this, dojoPaymentResult.name(),
             Toast.LENGTH_LONG).show();
         return Unit.INSTANCE;
