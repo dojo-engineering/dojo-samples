@@ -5,5 +5,5 @@ val dojoPayUI =
         Toast.makeText(this, result.name, Toast.LENGTH_SHORT).show()
     }
 
-// On Pay clicked
+// On Pay tapped
 dojoPayUI.startPaymentFlow(DojoPaymentFlowParams(paymentId = "<paymentIntentId>"))
