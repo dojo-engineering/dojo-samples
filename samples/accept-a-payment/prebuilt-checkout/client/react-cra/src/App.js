@@ -1,22 +1,21 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Route, Routes } from 'react-router';
-import { Layout } from './components/Layout';
 import { Home } from './components/Home';
 import { OrderResult } from './components/OrderResult';
+import { Checkout } from './components/Checkout';
+import { PageNotFound } from './components/PageNotFound';
 
 import './App.css'
 
-export default class App extends Component {
-  static displayName = App.name;
-
-  render () {
+const App = () => {
     return (
-      <Layout>
         <Routes>
-          <Route exact path='/' element={<Home/>} />
-          <Route path='/order-result' element={<OrderResult/>}  />
+            <Route exact path='/' element={<Home/>} />
+            <Route path='/order-result' element={<OrderResult/>} />
+            <Route path='/checkout' element={<Checkout/>} />
+            <Route path="*" element={<PageNotFound />} />
         </Routes>
-      </Layout>
-    );
-  }
-}
+    )
+};
+
+export default App;

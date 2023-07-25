@@ -10,9 +10,15 @@
     <meta name="theme-color" content="#000000" />
     <base href="%PUBLIC_URL%/" />
     <meta
-      name="description"
-      content="Web site created using create-react-app"
+    name="description"
+    content="Web site created using create-react-app"
     />
+
+    <meta 
+      http-equiv="Content-Security-Policy" 
+      content="default-src 'self' web.e.connect.paymentsense.cloud *.google.com *.google-analytics.com *.dojo.tech fonts.googleapis.com fonts.gstatic.com centinelapistag.cardinalcommerce.com; script-src 'self' *.dojo.tech *.google.com;style-src 'self' 'unsafe-inline' fonts.googleapis.com;" />
+
+    <script src="https://cdn.dojo.tech/payments/v1/client.js"></script>
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
