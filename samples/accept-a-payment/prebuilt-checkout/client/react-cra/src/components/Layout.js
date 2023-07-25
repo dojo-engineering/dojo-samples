@@ -1,16 +1,21 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Container } from 'reactstrap';
 
-export class Layout extends Component {
-  static displayName = Layout.name;
+const Layout = (props) => {
+    return <> 
+        <header>
+            <div className=".App-header">
+                <div className="item">
+                    <a href="/"><img src="./dojo.svg" width={150} height={50} /></a>
+                </div>
+                <div className="item">🚀 Sample app</div>
+            </div>
+        </header>
+        
+        <div className="container">
+            {props.children}
+        </div>
+  </>
+};
 
-  render () {
-    return (
-      <div>
-        <Container>
-          {this.props.children}
-        </Container>
-      </div>
-    );
-  }
-}
+export default Layout;

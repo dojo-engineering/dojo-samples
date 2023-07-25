@@ -1,5 +1,6 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router';
+import Layout from './Layout';
 
 function useQuery() {
     const { search } = useLocation();
@@ -7,25 +8,26 @@ function useQuery() {
     return React.useMemo(() => new URLSearchParams(search), [search]);
 }
 
-export const OrderResult = ()=> {
+export const OrderResult = () => {
       let query = useQuery();
       let id = query.get("id");
       const [paymentIntent, setPaymentIntent] = useState(null);
 
-      useEffect(()=>{
-          fetch("checkout/"+id).then(data=>data.json()).then(data=>
+      useEffect(() => {
+          fetch("checkout/" + id).then(data => data.json()).then(data =>
               setPaymentIntent(data)
           );
       }, [id]);
 
-      if (paymentIntent === null) {
+      if (paymentIntent === null || paymentIntent.status !== 2) {
           return null;
       }
-      return <div>
-        <h1>Payment result</h1>
-
-
-        <p aria-live="polite">Payment intent: {paymentIntent.id} {paymentIntent.status} </p>
-
-      </div>
+      return <Layout>
+        <div className="item">🥳 Payment successfull</div>
+        <div className="item">
+            <small>
+            ⚠️ Always ensure that you verify the status of your payment intent through an API call from your backend. Confirm its successful status directly on your backend.
+            </small>
+        </div>
+      </Layout>
 };

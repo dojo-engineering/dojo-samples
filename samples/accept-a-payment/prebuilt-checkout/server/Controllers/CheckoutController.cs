@@ -1,15 +1,6 @@
-using System;
-using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
-using System.IO;
-using System.Threading;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Dojo.Net;
-using Microsoft.Extensions.Logging;
 using ProblemDetails = Dojo.Net.ProblemDetails;
-using Dojo.Net.Webhooks;
-using Microsoft.Extensions.Configuration;
 using server.Model;
 
 namespace Server.Controllers;
@@ -39,7 +30,7 @@ public class CheckoutController : ControllerBase
                     Value = checkoutRequest.Amount,
                     CurrencyCode = "GBP"
                 },
-                Config = new PaymentIntentConfig()
+                Config = new ()
                 {
                     CancelUrl = new Uri(checkoutRequest.CancelUrl),
                     RedirectUrl = new Uri(checkoutRequest.RedirectUrl),
@@ -69,9 +60,7 @@ public class CheckoutController : ControllerBase
     {
         try
         {
-            var result = await _paymentIntentsClient.RefreshClientSessionSecretAsync(paymentIntentId, cancellationToken);
-
-            return result;
+            return await _paymentIntentsClient.GetAsync(paymentIntentId, cancellationToken);
         }
         catch (ApiClientException<ProblemDetails> e)
         {
@@ -87,13 +76,11 @@ public class CheckoutController : ControllerBase
     }
 
     [HttpPost("refresh-client-session/{paymentIntentId}")]
-    public async Task<string> RefreshClientSessionSecretAsync(string paymentIntentId, CancellationToken cancellationToken)
+    public async Task<PaymentIntent> RefreshClientSessionSecretAsync(string paymentIntentId, CancellationToken cancellationToken)
     {
         try
         {
-            var result = await _paymentIntentsClient.RefreshClientSessionSecretAsync(paymentIntentId, cancellationToken);
-
-            return result.ClientSessionSecret;
+            return await _paymentIntentsClient.RefreshClientSessionSecretAsync(paymentIntentId, cancellationToken);
         }
         catch (ApiClientException<ProblemDetails> e)
         {

@@ -14,11 +14,6 @@ div, p {
   line-height: 24px;
 }
 
-.container {
-  width: 100%;
-  height: 100%;
-}
-
 .App {
   width: 100%;
   height: 100%;
@@ -34,19 +29,8 @@ div, p {
   align-items: center;
 }
 
-.btn-primary {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
-}
-
-.App-Container {
-  margin-top: 48px;
-  max-width: 800px;
-}
-
 button.checkout {
-  width: 400px;
+  width: 200px;
   height: 44px;
 
   background: #262626;
@@ -60,6 +44,31 @@ button.checkout {
   cursor: pointer;
 }
 
+button.checkout:hover {
+  background: #3c4043;
+}
+
+button.back {
+  width: 200px;
+  height: 44px;
+
+  background: white;
+  border-radius: 40px;
+  margin-top: 32px;
+  margin-right: 10px;
+  font-size: 16px;
+  line-height: 24px;
+  border-color: black;
+  border-style: solid;
+
+  color: black;
+  cursor: pointer;
+}
+
+button.back:hover {
+  background: #EFEFEF;
+}
+
 .image-placeholder {
   width: 160px;
   height: 160px;
@@ -69,7 +78,7 @@ button.checkout {
 }
 
 .checkout-details {
-  padding: 0 32px;
+  padding: 0 0px;
   position: relative;
 }
 
@@ -100,14 +109,9 @@ h4 {
   line-height: 28px;
 }
 
-
 #number {
-  width: 103px;
-  height: 48px;
-}
-
-.summary {
-  padding: 0 24px;
+  width: 40px;
+  height: 40px;
 }
 
 label {
@@ -122,7 +126,6 @@ label {
 p {
   margin: 16px 0;
 }
-
 
 .totals {
   margin-top: 56px;
@@ -142,4 +145,48 @@ hr {
 .subtotal, .total {
   display: flex;
   justify-content: space-between;
+}
+
+.container {
+  display: flex;
+  flex-direction: column; 
+  flex-wrap: wrap;     
+  justify-content: space-around;
+  align-items: center; 
+  width: 100%;
+  height: 100%;
+}
+
+.tiny {
+  font-size: small;
+}
+
+.errors {
+  color: red;
+}  
+
+.item {
+  flex-basis: 40%; 
+  margin: 5px;    
+  padding: 5px;  
+  box-sizing: border-box;
+  text-align: center; 
+}
+
+@media (max-width: 800px) {
+  .item {
+    flex-basis: 50%;
+  }
+}
+
+@media (max-width: 500px) {
+  .item {
+    flex-basis: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  button.back {
+    margin-right: 0px;
+  }
 }
