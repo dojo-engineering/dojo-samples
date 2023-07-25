@@ -114,7 +114,7 @@ export const Checkout = () => {
         setErrors(errorList);
     }
 
-    const onPayWithCard = useCallback(() => {
+    const onPayWithCard = () => {
         setPaymentInProgress(true);
         
         card.executePayment()
@@ -138,7 +138,7 @@ export const Checkout = () => {
             }).then(function () {
                 setPaymentInProgress(false);
             });
-    });
+    };
 
     async function refreshClientSessionSecret() {
         const updateClientSession = async () => {
