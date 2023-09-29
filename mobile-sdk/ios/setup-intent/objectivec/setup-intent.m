@@ -3,7 +3,7 @@
 @property DojoSDKDropInUI *dojoUI;
 
 self.dojoUI = [[DojoSDKDropInUI alloc] init];
-[self.dojoUI startSetupFlowWithPaymentIntentId:@"<setupIntentId>"
+[self.dojoUI startSetupFlowWithSetupIntentId:@"<setupIntentId>"
                                     controller:self
                                  themeSettings:nil
                                     completion:^(NSInteger result) {
