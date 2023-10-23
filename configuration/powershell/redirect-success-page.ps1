@@ -7,12 +7,15 @@ $publicSandboxKey = "sk_sandbox_c8oLGaI__msxsXbpBDpdtwJEz_eIhfQoKHmedqgZPCdBx59z
 Invoke-WebRequest `
     -Uri 'https://api.dojo.tech/payment-intents' `
     -Method POST `
-    -Headers @{ "version" = "2022-04-07"; "Authorization" = "Basic $publicSandboxKey" } `
+    -Headers @{ "Version" = "2022-04-07"; "Authorization" = "Basic $publicSandboxKey" } `
     -ContentType 'application/json' `
     -Body '{
-             "amount": { "value": 1000, "currencyCode": "GBP" },
-             "reference": "Order-0001",
-             "config": {
-               "redirectUrl": "http://mymerchantsite.com/checkout/success_pay"
-             }
-          }'
+        "amount": {
+            "value": 1000,
+            "currencyCode": "GBP"
+        },
+        "reference": "Order-0001",
+        "config": {
+            "redirectUrl": "http://mymerchantsite.com/checkout/success_pay"
+        }
+    }'

@@ -1,0 +1,3 @@
+-keep class com.cardinalcommerce.dependencies.internal.bouncycastle.**
+-keep class com.cardinalcommerce.dependencies.internal.nimbusds.**
+-keep class tech.dojo.pay.** { *; }

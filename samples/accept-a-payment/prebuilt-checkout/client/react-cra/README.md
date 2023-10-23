@@ -2,6 +2,8 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+In order to run this client project, server component running is required with dotnet 6.0. To run the server, install dotnet 6.0 and run `dotnet run` in the server folder.
+
 ## Available Scripts
 
 In the project directory, you can run:

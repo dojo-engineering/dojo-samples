@@ -1,0 +1,17 @@
+repositories {
+    ...
+    maven {
+        url = uri("https://maven.pkg.github.com/Dojo-Engineering/android-dojo-pay-sdk")
+        credentials {
+            username = ""
+            password = ""
+        }
+    }
+    maven {
+        url = uri("https://cardinalcommerceprod.jfrog.io/artifactory/android")
+        credentials { // Contact Dojo support for credentials
+            username = "" 
+            password = ""
+            }
+        }
+}

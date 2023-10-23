@@ -10,8 +10,8 @@ conn = http.client.HTTPSConnection("api.dojo.tech")
 payload = "{\"amount\":{\"value\":1000,\"currencyCode\":\"GBP\"}}"
 
 headers = {
-    'content-type': "application/json",
-    'version': "2022-04-07",
+    'Content-Type': "application/json",
+    'Version': "2022-04-07",
     'Authorization': "Basic sk_sandbox_<your_secret_key>"
     }
 
