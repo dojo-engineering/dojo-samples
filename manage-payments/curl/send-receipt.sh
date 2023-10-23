@@ -4,9 +4,9 @@
 # for secure testing.
 
 curl -v --request POST \
-  --url https://api.dojo.tech/payment-intents/pi_sandbox_sBkIfznr1Em0vCE0MkZpc/receipt \
+  --url https://api.dojo.tech/payment-intents/<paymentIntentId>/receipt \
   --header 'Content-Type: application/json' \
-  --header 'Authorization: Basic sk_sandbox_c8oLGaI__msxsXbpBDpdtwJEz_eIhfQoKHmedqgZPCdBx59zpKZLSk8OPLT0cZolbeuYJSBvzDVVsYvtpo5RkQ' \
+  --header 'Authorization: Basic <your_api_key>' \
   --header 'Version: 2022-04-07' \
   --data '{
     "emails": [

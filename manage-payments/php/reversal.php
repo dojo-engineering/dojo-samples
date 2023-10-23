@@ -9,7 +9,7 @@ require_once "vendor/autoload.php";
 
 use Dojo_PHP\ApiFactory;
 
-$apiKey = "sk_sandbox_c8oLGaI__msxsXbpBDpdtwJEz_eIhfQoKHmedqgZPCdBx59zpKZLSk8OPLT0cZolbeuYJSBvzDVVsYvtpo5RkQ";
+$apiKey = "<your_api_key>";
 $api = ApiFactory::createReversalApi($apiKey);
 
-$pi = $api->reversalCreate(\Dojo_PHP\API_VERSION, "<pi_id>");
+$pi = $api->reversalCreate(\Dojo_PHP\API_VERSION, "<paymentIntentId>");

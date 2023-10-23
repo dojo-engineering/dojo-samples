@@ -5,9 +5,9 @@
 
 $publicSandboxKey = "sk_sandbox_c8oLGaI__msxsXbpBDpdtwJEz_eIhfQoKHmedqgZPCdBx59zpKZLSk8OPLT0cZolbeuYJSBvzDVVsYvtpo5RkQ"
 
-# Replace <PAYMENT_INTENT_ID> with ID of payment intent you want to send receipt for.
+# Replace <payment_intent_id> with ID of payment intent you want to send receipt for.
 Invoke-WebRequest `
-    -Uri 'https://api.dojo.tech/payment-intents/<PAYMENT_INTENT_ID>/receipt' `
+    -Uri 'https://api.dojo.tech/payment-intents/<paymentIntentId>/receipt' `
     -Method POST `
     -Headers @{
         "Version" = "2022-04-07"

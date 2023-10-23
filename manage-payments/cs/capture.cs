@@ -3,8 +3,8 @@
 // Sign in to developer.dojo.tech to create your own private sandbox key and use that instead
 // for secure testing.
 
-var capturesClient = new Dojo.Net.CapturesClient(new HttpClient(), new ApiKeyClientAuthorization("sk_sandbox_c8oLGaI__msxsXbpBDpdtwJEz_eIhfQoKHmedqgZPCdBx59zpKZLSk8OPLT0cZolbeuYJSBvzDVVsYvtpo5RkQ"));
-var result = await capturesClient.CreateAsync("<PAYMENT_INTENT_ID>", new CreateCaptureRequest
+var capturesClient = new Dojo.Net.CapturesClient(new HttpClient(), new ApiKeyClientAuthorization("<your_api_key>"));
+var result = await capturesClient.CreateAsync("<paymentIntentId>", new CreateCaptureRequest
 {
     Amount = 1000
 });

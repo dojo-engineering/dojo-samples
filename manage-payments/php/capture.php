@@ -10,8 +10,8 @@ require_once "vendor/autoload.php";
 use Dojo_PHP\ApiFactory;
 use Dojo_PHP\Model\CreateCaptureRequest;
 
-$apiKey = "sk_sandbox_c8oLGaI__msxsXbpBDpdtwJEz_eIhfQoKHmedqgZPCdBx59zpKZLSk8OPLT0cZolbeuYJSBvzDVVsYvtpo5RkQ";
+$apiKey = "<your_api_key>";
 $apiPaymentIntent = ApiFactory::createCapturesApi($apiKey);
 
 $captureRequest = new CreateCaptureRequest(["amount" => 1000]);
-$apiPaymentIntent->capturesCreate(\Dojo_PHP\API_VERSION, "pi_sandbox_OAJXDZoruECWe1oM02wMcg", $captureRequest);
+$apiPaymentIntent->capturesCreate(\Dojo_PHP\API_VERSION, "<paymentIntentId>", $captureRequest);

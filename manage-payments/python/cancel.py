@@ -9,7 +9,7 @@ conn = http.client.HTTPSConnection("api.dojo.tech")
 
 headers = {
     'Version': "2022-04-07",
-    'Authorization': "Basic sk_sandbox_<your_secret_key>"
+    'Authorization': "Basic <your_api_key>"
     }
 conn.request("DELETE", f"/payment-intents/{paymentIntentId}", headers=headers)
 

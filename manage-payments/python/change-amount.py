@@ -12,7 +12,7 @@ payload = "{\"amount\":{\"value\":1000,\"currencyCode\":\"GBP\"}}"
 headers = {
     'Content-Type': "application/json",
     'Version': "2022-04-07",
-    'Authorization': "Basic sk_sandbox_<your_secret_key>"
+    'Authorization': "Basic <your_api_key>"
     }
 
 conn.request("POST", f"/payment-intents/{paymentIntentId}/amount", payload, headers)
