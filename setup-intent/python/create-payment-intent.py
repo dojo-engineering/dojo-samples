@@ -12,7 +12,7 @@ payload = json.dumps({
         "value": 1000,
         "currencyCode": "GBP"
     },
-    "reference": "Table no. 4.",
+    "reference": "Dojo Cafe | Table no. 4.",
     "setupIntentId": "si_sandbox_6zrBhAXpYE2Q7QZPFB1flQ"
 })
 headers = {

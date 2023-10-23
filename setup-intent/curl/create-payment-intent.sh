@@ -4,7 +4,7 @@
 # for secure testing.
 
 curl -v --request POST \
-    --url https://api.dojo.tech/payment-intents \
+    --url 'https://api.dojo.tech/payment-intents' \
     --header 'Content-Type: application/json' \
     --header 'Authorization: Basic sk_sandbox_c8oLGaI__msxsXbpBDpdtwJEz_eIhfQoKHmedqgZPCdBx59zpKZLSk8OPLT0cZolbeuYJSBvzDVVsYvtpo5RkQ' \
     --header 'Version: 2022-04-07' \
@@ -13,6 +13,6 @@ curl -v --request POST \
             "value": 1000,
             "currencyCode": "GBP"
         },
-        "reference": "Table no. 4.",
+        "reference": "Dojo Cafe | Table no. 4.",
         "setupIntentId": "si_sandbox_6zrBhAXpYE2Q7QZPFB1flQ"
-        }'
+    }'

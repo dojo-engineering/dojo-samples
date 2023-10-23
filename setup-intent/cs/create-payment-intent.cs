@@ -11,7 +11,6 @@ var result = await paymentIntentsClient.CreatePaymentIntentAsync(new CreatePayme
         Value = 1000,
         CurrencyCode = "GBP"
     },
-    Description = "Demo payment intent",
-    Reference = "Table no.4.",
+    Reference = "Dojo Cafe | Table no.4.",
     SetupIntentId = "si_<secret-key>",
 });
