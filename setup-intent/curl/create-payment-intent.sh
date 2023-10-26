@@ -14,5 +14,5 @@ curl -v --request POST \
             "currencyCode": "GBP"
         },
         "reference": "Dojo Cafe | Table no. 4.",
-        "setupIntentId": "si_sandbox_6zrBhAXpYE2Q7QZPFB1flQ"
+        "setupIntentId": "<setupIntentId>"
     }'

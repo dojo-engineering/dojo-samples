@@ -12,5 +12,5 @@ var result = await paymentIntentsClient.CreatePaymentIntentAsync(new CreatePayme
         CurrencyCode = "GBP"
     },
     Reference = "Dojo Cafe | Table no.4.",
-    SetupIntentId = "si_<secret-key>",
+    SetupIntentId = "<setupIntentId>",
 });
