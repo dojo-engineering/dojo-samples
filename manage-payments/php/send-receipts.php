@@ -10,8 +10,8 @@ require_once "vendor/autoload.php";
 use Dojo_PHP\ApiFactory;
 use Dojo_PHP\Model\SendEmailReceiptRequest;
 
-$apiKey = "sk_sandbox_c8oLGaI__msxsXbpBDpdtwJEz_eIhfQoKHmedqgZPCdBx59zpKZLSk8OPLT0cZolbeuYJSBvzDVVsYvtpo5RkQ";
+$apiKey = "<your_api_key>";
 $api = ApiFactory::createPaymentIntentApi($apiKey);
 
 $request = new SendEmailReceiptRequest(["emails" => ["gabriel@dojo.com", "mari@dojo.com"]]);
-$api->receiptCreate(\Dojo_PHP\API_VERSION, "<pi_id>", $request);
+$api->receiptCreate(\Dojo_PHP\API_VERSION, "<paymentIntentId>", $request);

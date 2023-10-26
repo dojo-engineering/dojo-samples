@@ -3,5 +3,5 @@
 // Sign in to developer.dojo.tech to create your own private sandbox key and use that instead
 // for secure testing.
 
-var receiptClient = new ReceiptClient(new HttpClient(), new ApiKeyClientAuthorization("sk_sandbox_c8oLGaI__msxsXbpBDpdtwJEz_eIhfQoKHmedqgZPCdBx59zpKZLSk8OPLT0cZolbeuYJSBvzDVVsYvtpo5RkQ"));
-receiptClient.CreateAsync("<PAYMENT_INTENT_ID>", new SendEmailReceiptRequest{ Emails = new List<string>() { "my@email.com" }});
+var receiptClient = new ReceiptClient(new HttpClient(), new ApiKeyClientAuthorization("<your_api_key>"));
+receiptClient.CreateAsync("<paymentIntentId>", new SendEmailReceiptRequest{ Emails = new List<string>() { "my@email.com" }});

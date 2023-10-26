@@ -11,9 +11,9 @@ use Dojo_PHP\ApiFactory;
 use Dojo_PHP\Model\Money;
 use Dojo_PHP\Model\SetTipsAmountRequest;
 
-$apiKey = "sk_sandbox_c8oLGaI__msxsXbpBDpdtwJEz_eIhfQoKHmedqgZPCdBx59zpKZLSk8OPLT0cZolbeuYJSBvzDVVsYvtpo5RkQ";
+$apiKey = "<your_api_key>";
 $apiPaymentIntent = ApiFactory::createPaymentIntentApi($apiKey);
 
 $tipsAmount = new SetTipsAmountRequest(["tips_amount" => new Money(['value' => 1000, 'currency_code' => "GBP"])]);
 
-$apiPaymentIntent->paymentIntentsSetTipsAmount(\Dojo_PHP\API_VERSION, "<pi_id>", $tipsAmount);
+$apiPaymentIntent->paymentIntentsSetTipsAmount(\Dojo_PHP\API_VERSION, "<paymentIntentId>", $tipsAmount);

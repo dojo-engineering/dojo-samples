@@ -10,8 +10,8 @@ require_once "vendor/autoload.php";
 use Dojo_PHP\ApiFactory;
 use Dojo_PHP\Model\CreateRefundRequest;
 
-$apiKey = "sk_sandbox_c8oLGaI__msxsXbpBDpdtwJEz_eIhfQoKHmedqgZPCdBx59zpKZLSk8OPLT0cZolbeuYJSBvzDVVsYvtpo5RkQ";
+$apiKey = "<your_api_key>";
 $refundApi = ApiFactory::createRefundsApi($apiKey);
 
 $refundRequest = new CreateRefundRequest(["amount" => 50, "notes" => "Demo refund", "refund_reason" => "Duplicate transaction"]);
-$refundApi->refundsCreate(\Dojo_PHP\API_VERSION, "<pi_id>", "656565gfyd65", $refundRequest);
+$refundApi->refundsCreate(\Dojo_PHP\API_VERSION, "<paymentIntentId>", "656565gfyd65", $refundRequest);

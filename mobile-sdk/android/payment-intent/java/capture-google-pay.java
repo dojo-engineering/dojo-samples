@@ -13,7 +13,7 @@ DojoGPayConfig dojoGPayConfig = new DojoGPayConfig(
     "<Merchant_Id>",
     "<Gateway_Merchant_Id>"
 );
-// On Pay tapped
+// On "Pay" tapped
 dojoPaymentFlowHandler.startPaymentFlow(
     new DojoPaymentFlowParams(
         "<paymentIntentId>",
