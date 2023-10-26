@@ -5,9 +5,9 @@
 
 $publicSandboxKey = "sk_sandbox_c8oLGaI__msxsXbpBDpdtwJEz_eIhfQoKHmedqgZPCdBx59zpKZLSk8OPLT0cZolbeuYJSBvzDVVsYvtpo5RkQ"
 
-# Replace <PAYMENT_INTENT_ID> with ID of payment intent you want to cancel.
+# Replace <payment_intent_id> with ID of payment intent you want to cancel.
 Invoke-WebRequest `
-    -Uri 'https://api.dojo.tech/payment-intents/<PAYMENT_INTENT_ID>' `
+    -Uri 'https://api.dojo.tech/payment-intents/<paymentIntentId>' `
     -Method DELETE `
     -Headers @{
         "Version" = "2022-04-07"

@@ -3,5 +3,5 @@
 // Sign in to developer.dojo.tech to create your own private sandbox key and use that instead
 // for secure testing.
 
-var paymentIntentsClient = new PaymentIntentsClient(new HttpClient(), new ApiKeyClientAuthorization("sk_sandbox_c8oLGaI__msxsXbpBDpdtwJEz_eIhfQoKHmedqgZPCdBx59zpKZLSk8OPLT0cZolbeuYJSBvzDVVsYvtpo5RkQ"));
-var result = await paymentIntentsClient.SetTipsAmountAsync("<PAYMENT_INTENT_ID>", new SetTipsAmountRequest{TipsAmount = new Money { Value = 200, CurrencyCode = "GBP" }});
+var paymentIntentsClient = new PaymentIntentsClient(new HttpClient(), new ApiKeyClientAuthorization("<your_api_key>"));
+var result = await paymentIntentsClient.SetTipsAmountAsync("<paymentIntentId>", new SetTipsAmountRequest{TipsAmount = new Money { Value = 200, CurrencyCode = "GBP" }});

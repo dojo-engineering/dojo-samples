@@ -3,5 +3,5 @@
 // Sign in to developer.dojo.tech to create your own private sandbox key and use that instead
 // for secure testing.
 
-var reversalClient = new ReversalClient(new HttpClient(), new ApiKeyClientAuthorization("sk_sandbox_c8oLGaI__msxsXbpBDpdtwJEz_eIhfQoKHmedqgZPCdBx59zpKZLSk8OPLT0cZolbeuYJSBvzDVVsYvtpo5RkQ"));
-var result = await reversalClient.CreateAsync("<PAYMENT_INTENT_ID>");
+var reversalClient = new ReversalClient(new HttpClient(), new ApiKeyClientAuthorization("<your_api_key>"));
+var result = await reversalClient.CreateAsync("<paymentIntentId>");

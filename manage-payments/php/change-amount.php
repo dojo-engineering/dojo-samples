@@ -11,9 +11,9 @@ use Dojo_PHP\ApiFactory;
 use Dojo_PHP\Model\Money;
 use Dojo_PHP\Model\SetAmountRequest;
 
-$apiKey = "sk_sandbox_c8oLGaI__msxsXbpBDpdtwJEz_eIhfQoKHmedqgZPCdBx59zpKZLSk8OPLT0cZolbeuYJSBvzDVVsYvtpo5RkQ";
+$apiKey = "<your_api_key>";
 $apiPaymentIntent = ApiFactory::createPaymentIntentApi($apiKey);
 
 $customAmountRequest = new SetAmountRequest(["amount" => new Money(['value' => 1000, 'currency_code' => "GBP"])]);
 
-$apiPaymentIntent->paymentIntentsSetCustomAmount(\Dojo_PHP\API_VERSION, "<pi_id>", $customAmountRequest);
+$apiPaymentIntent->paymentIntentsSetCustomAmount(\Dojo_PHP\API_VERSION, "<paymentIntentId>", $customAmountRequest);

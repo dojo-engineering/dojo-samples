@@ -9,7 +9,7 @@ require_once "vendor/autoload.php";
 
 use Dojo_PHP\ApiFactory;
 
-$apiKey = "sk_sandbox_c8oLGaI__msxsXbpBDpdtwJEz_eIhfQoKHmedqgZPCdBx59zpKZLSk8OPLT0cZolbeuYJSBvzDVVsYvtpo5RkQ";
+$apiKey = "<your_api_key>";
 $api = ApiFactory::createPaymentIntentApi($apiKey);
 
-$pi = $api->paymentIntentsGet("pi_sandbox_bmLZhauWc0mDFwA1dH_enA", \Dojo_PHP\API_VERSION);
+$pi = $api->paymentIntentsGet("<paymentIntentId>", \Dojo_PHP\API_VERSION);

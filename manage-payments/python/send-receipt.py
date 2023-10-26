@@ -11,11 +11,11 @@ payload = "{\"emails\":[\"gabriel@dojo.com\",\"mari@dojo.com\"]}"
 
 headers = {
     'Content-Type': "application/json",
-    'Version': "SOME_STRING_VALUE",
-    'Authorization': "Basic REPLACE_BASIC_AUTH"
+    'Version': "2022-04-07",
+    'Authorization': "Basic <your_api_key>"
     }
 
-conn.request("POST", "/payment-intents/%7BpaymentIntentId%7D/receipt", payload, headers)
+conn.request("POST", "/payment-intents/<paymentIntentId>/receipt", payload, headers)
 
 res = conn.getresponse()
 data = res.read()
