@@ -5,4 +5,4 @@
 
 var setupIntentsClient = new SetupIntentsClient(new HttpClient(), new ApiKeyClientAuthorization("sk_sandbox_c8oLGaI__msxsXbpBDpdtwJEz_eIhfQoKHmedqgZPCdBx59zpKZLSk8OPLT0cZolbeuYJSBvzDVVsYvtpo5RkQ"));
 var result = await setupIntentsClient.GetByIdAsync("<Setup intent ID>");
-Console.Write(result.Status);
+Console.WriteLine(result.Status);
