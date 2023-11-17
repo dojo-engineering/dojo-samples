@@ -1,8 +1,9 @@
 using Dojo.Net;
 using Microsoft.AspNetCore.Mvc;
 using server.Authorization;
+using server.Model;
 using server.Repositories;
-using Customer = server.Repositories.Customer;
+using Customer = server.Model.Customer;
 
 namespace server.Controllers
 {
@@ -10,21 +11,24 @@ namespace server.Controllers
     [ApiController]
     public class AuthController : ControllerBase
     {
-        private readonly ICustomersClient _customersClient;
+        private readonly IDojoCustomersRepository _dojoCustomersRepository;
 
-        public AuthController(ICustomersClient customersClient)
+        public AuthController(IDojoCustomersRepository dojoCustomersRepository)
         {
-            _customersClient = customersClient;
+            _dojoCustomersRepository = dojoCustomersRepository;
         }
 
         [HttpPost("login")]
-        public async Task<IActionResult> Login([FromBody] LoginModel login)
+        public async Task<IActionResult> Login([FromBody] LoginRequest login)
         {
             var expectedCustomer = CustomersRepository.FindCustomer("best-customer-id");
 
             if (login.Email == expectedCustomer.Email && login.Password == expectedCustomer.Password)
             {
-                var dojoCustomer = await GetOrCreateDojoCustomerAsync(expectedCustomer);
+                // to be able to retrieve Dojo Customer payments methods, make sure you create one, and link it to your
+                // internal customer
+                var dojoCustomer = await _dojoCustomersRepository.GetOrCreateDojoCustomerAsync(expectedCustomer);
+                CustomersRepository.UpdateDojoCustomerId(expectedCustomer.Id, dojoCustomer.Id);
                 var token = JwtTokenService.GetToken(expectedCustomer.Id);
 
                 var response = new
@@ -41,32 +45,5 @@ namespace server.Controllers
 
             return Unauthorized();
         }
-
-        private async Task<CustomerFull> GetOrCreateDojoCustomerAsync(Customer customer)
-        {
-            if (!string.IsNullOrEmpty(customer?.DojoCustomerId))
-            {
-                var dojoCustomer = (await _customersClient.GetAsync(customer.DojoCustomerId)).SingleOrDefault();
-                if (dojoCustomer != null)
-                {
-                    return dojoCustomer;
-                }
-            }
-            
-            var newCustomerRequest = new CreateCustomerRequest
-            {
-                Name = customer.Name,
-                EmailAddress = customer.Email
-            };
-            var newCustomer = await _customersClient.CreateAsync(newCustomerRequest);
-
-            return newCustomer;
-        }
-    }
-
-    public class LoginModel
-    {
-        public string Email { get; set; }
-        public string Password { get; set; }
     }
 }

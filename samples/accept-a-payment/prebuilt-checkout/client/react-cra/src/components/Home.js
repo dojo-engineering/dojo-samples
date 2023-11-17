@@ -64,7 +64,7 @@ export const Home = () => {
   }, [items, products.Croissant]);
 
   const amount = useMemo(() => {
-    return quantity * products.Croissant.Price;
+    return (quantity * (products.Croissant.Price * 100)) / 100;
   }, [quantity, products.Croissant]);
 
   useEffect(() => {

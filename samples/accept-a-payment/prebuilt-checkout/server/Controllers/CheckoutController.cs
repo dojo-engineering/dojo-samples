@@ -16,12 +16,18 @@ public class CheckoutController : ControllerBase
 {
     private readonly ILogger<CheckoutController> _logger;
     private readonly IPaymentIntentsClient _paymentIntentsClient;
+    private readonly IDojoCustomersRepository _dojoCustomersRepository;
     private readonly ICustomersClient _customersClient;
 
-    public CheckoutController(ILogger<CheckoutController> logger, IPaymentIntentsClient paymentIntentsClient, ICustomersClient customersClient)
+    public CheckoutController(
+        ILogger<CheckoutController> logger,
+        IPaymentIntentsClient paymentIntentsClient,
+        IDojoCustomersRepository dojoCustomersRepository,
+        ICustomersClient customersClient)
     {
         _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         _paymentIntentsClient = paymentIntentsClient ?? throw new ArgumentNullException(nameof(paymentIntentsClient));
+        _dojoCustomersRepository = dojoCustomersRepository ?? throw new ArgumentNullException(nameof(dojoCustomersRepository));
         _customersClient = customersClient ?? throw new ArgumentNullException(nameof(customersClient));
     }
 
@@ -71,18 +77,17 @@ public class CheckoutController : ControllerBase
         {
             var customerId = User.Claims.FirstOrDefault(c => c.Type == "CustomerId").Value;
             var customer = CustomersRepository.FindCustomer(customerId);
-            var dojoCustomer = (await _customersClient.GetAsync(customer.DojoCustomerId, cancellationToken)).SingleOrDefault();
+            // 1. Retrieve/Create Dojo customer and link it to your internal customer entity.
+            var dojoCustomer = await _dojoCustomersRepository.GetOrCreateDojoCustomerAsync(customer);
+            CustomersRepository.UpdateDojoCustomerId(customer.Id, dojoCustomer.Id);
 
-            if (dojoCustomer == null)
-            {
-                return BadRequest($"Could not find any customer with id '{customerId}'");
-            }
-
+            // 2. Generate a temporary customer secret, needed to retrieve saved payment methods.
             var customerSecret = await _customersClient.CreateCustomerSecretAsync(dojoCustomer.Id, cancellationToken);
 
-            //var customerPaymentMethods = await _customersClient.GetPaymentMethodsAsync(dojoCustomer.Id, $"Basic {customerSecret.Secret}", cancellationToken);
-            var customerPaymentMethods = await GetCustomerPaymentMethodsAsync(dojoCustomer.Id, customerSecret.Secret);
+            // 3. Get customer payment methods and authorize with previously created secret.
+            var customerPaymentMethods = await _customersClient.GetPaymentMethodsAsync(dojoCustomer.Id, $"Basic {customerSecret.Secret}", cancellationToken);
 
+            // 4. Create a payment intent, IMPORTANT to pass the customer id and details
             var result = await _paymentIntentsClient.CreatePaymentIntentAsync(new CreatePaymentIntentRequest
             {
                 Amount = new Money()
@@ -152,8 +157,7 @@ public class CheckoutController : ControllerBase
 
             var customerSecret = await _customersClient.CreateCustomerSecretAsync(dojoCustomer.Id, cancellationToken);
 
-            //var customerPaymentMethods = await _customersClient.GetPaymentMethodsAsync(dojoCustomer.Id, $"Basic {customerSecret.Secret}", cancellationToken);
-            var customerPaymentMethods = await GetCustomerPaymentMethodsAsync(dojoCustomer.Id, customerSecret.Secret);
+            var customerPaymentMethods = await _customersClient.GetPaymentMethodsAsync(dojoCustomer.Id, $"Basic {customerSecret.Secret}", cancellationToken);
 
             return Ok(new CustomerCheckoutResponse
             {
@@ -212,26 +216,5 @@ public class CheckoutController : ControllerBase
             _logger.LogError(e, "Unhandled error");
             throw;
         }
-    }
-
-    private async Task<CustomerPaymentMethods> GetCustomerPaymentMethodsAsync(string customerId, string secret)
-    {
-        var httpClient = new HttpClient
-        {
-            BaseAddress = new Uri("https://api.dojo.tech", UriKind.Absolute),
-        };
-
-        httpClient.DefaultRequestHeaders.Add("Version", "2023-10-11");
-
-        var request = new HttpRequestMessage(HttpMethod.Get,
-            $"/customers/public/{customerId}/payment-methods");
-        request.Headers.Add("Authorization", $"Basic {secret}");
-
-        var response = await httpClient.SendAsync(request);
-
-        response.EnsureSuccessStatusCode();
-        var content = await response.Content.ReadAsStringAsync();
-
-        return JsonConvert.DeserializeObject<CustomerPaymentMethods>(content);
     }
 }

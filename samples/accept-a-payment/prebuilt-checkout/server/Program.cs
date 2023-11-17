@@ -9,6 +9,7 @@ using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Serialization;
 using Polly;
 using server.Authorization;
+using server.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -26,6 +27,8 @@ builder.Services
     .AddHttpClient<ICustomersClient, CustomersClient>()
     .AddTransientHttpErrorPolicy(
         x => x.WaitAndRetryAsync(3, retryAttempt => TimeSpan.FromSeconds(Math.Pow(3, retryAttempt))));
+
+builder.Services.AddSingleton<IDojoCustomersRepository, DojoCustomersRepository>();
 
 builder.Services.AddAuthentication(options =>
     {
