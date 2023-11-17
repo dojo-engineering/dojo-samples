@@ -1,0 +1,19 @@
+.card-radio-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .card-radio {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .card-radio input[type="radio"] {
+    margin-right: 10px;
+  }
+  
+  .card-icon {
+    margin-right: 10px;
+    height: 30px;
+  }
