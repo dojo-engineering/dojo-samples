@@ -3,6 +3,9 @@ import React, { createContext, useContext, useState, useEffect } from "react";
 export const AuthContext = createContext({
   isAuthenticated: false,
   customerName: null,
+  dojoCustomerId: null,
+  customerId: null,
+  token: null,
 });
 
 export const useAuth = () => useContext(AuthContext);

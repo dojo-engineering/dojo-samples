@@ -20,7 +20,7 @@ const checkout = (
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json",
-      Authorization: useSaveCards ? `Bearer ${customer.Token}` : null,
+      Authorization: useSaveCards ? `Bearer ${customer?.Token}` : null,
     },
     body: JSON.stringify({
       amount: totalAmount,
@@ -101,7 +101,7 @@ export const Home = () => {
         });
       }
     } else {
-      checkout(quantity, useHostedCheckout, false, products.Croissant);
+      checkout(quantity, useHostedCheckout, products.Croissant, false);
     }
   }, [
     useSaveCards,
