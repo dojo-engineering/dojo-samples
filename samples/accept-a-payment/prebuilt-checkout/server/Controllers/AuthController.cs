@@ -1,9 +1,7 @@
-using Dojo.Net;
 using Microsoft.AspNetCore.Mvc;
 using server.Authorization;
 using server.Model;
 using server.Repositories;
-using Customer = server.Model.Customer;
 
 namespace server.Controllers
 {

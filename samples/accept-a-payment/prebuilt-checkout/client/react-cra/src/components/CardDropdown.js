@@ -52,8 +52,8 @@ const CardDropdown = ({ savedPaymentMethods, onCardSelected }) => {
               <img src={cardIcon} alt={scheme} className="card-icon" />
             )}
             <div>
-              <h4>{scheme}</h4>
-              <span>****{lastFourDigits}</span>
+              <div className="card-label">{scheme}</div>
+              <span className="card-label">****{lastFourDigits}</span>
             </div>
           </label>
         );

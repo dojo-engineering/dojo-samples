@@ -5,9 +5,12 @@ using Microsoft.IdentityModel.Tokens;
 
 namespace server.Authorization
 {
+    /// <summary>
+    /// The code below is only for demo purposes. Please implement a proper authentication mechanism.
+    /// </summary>
     public static class JwtTokenService
     {
-        // secret should NEVER be hardcoded, this code is for demonstration purposes only
+        // Secret should NEVER be hardcoded, this code is for demonstration purposes only
         public static string TokenSecret = "a999777221f7649f61d39609f849249f5f24d53d8692e99191e1cac53f55a810";
 
         public static string GetToken(string customerId)
