@@ -51,7 +51,7 @@ export const Home = () => {
     Croissant: {
       Id: 1,
       Name: "Croissant",
-      Price: 0.1,
+      Price: 2,
     },
   };
 
@@ -137,6 +137,7 @@ export const Home = () => {
               id="number"
               value={quantity}
               defaultValue={1}
+              className="select"
               onChange={onOrderUpdate}
             >
               <option key="1" value={1}>
@@ -181,7 +182,7 @@ export const Home = () => {
             value={useSaveCards}
             onChange={setUseSaveCards}
           />
-          Use save cards
+          Use save cards 🔒
         </label>
 
         <div className="footer">

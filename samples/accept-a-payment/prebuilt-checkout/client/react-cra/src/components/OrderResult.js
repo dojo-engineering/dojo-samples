@@ -9,6 +9,8 @@ function useQuery() {
 }
 
 export const OrderResult = () => {
+  console.log("Loading order result...");
+
   let query = useQuery();
   let id = query.get("id");
   const [paymentIntent, setPaymentIntent] = useState(null);
@@ -23,7 +25,16 @@ export const OrderResult = () => {
   }, [id]);
 
   if (paymentIntent === null || paymentIntent.status !== "Captured") {
-    return null;
+    return (
+    <Layout>
+      <div className="item">🥺 Payment failed!</div>
+      <div className="item">
+        <small>
+          Looks like your payment failed. Current status is '{paymentIntent?.status}'.
+        </small>
+      </div>
+    </Layout>
+    );
   }
   return (
     <Layout>

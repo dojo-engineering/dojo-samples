@@ -1,0 +1,30 @@
+
+.demo-payment-wallet-container {
+   margin-top: 20px;
+   position: relative; 
+   width: 100%;
+   height: 55px;
+}
+  
+.demo-payment-wallet-spinner {
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+}
+
+.demo-payment-wallet-holder {
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+}
+
+.demo-payment-wallet-payment-spinner {
+   position: absolute;
+   top: 0;
+   left: -20px;
+   padding-right: 50px;
+}
