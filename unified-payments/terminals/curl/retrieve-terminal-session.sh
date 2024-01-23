@@ -3,7 +3,7 @@
 # Sign in to developer.dojo.tech to create your own private sandbox key and use that instead
 # for secure testing.
 
-curl --location --request GET 'https://staging-api.dojo.dev/master/terminals/tm_sandbox_65aaa2a8637e6374ac2447c9' \
+curl --location --request GET 'https://staging-api.dojo.dev/master/terminal-sessions/ts_sandbox_65aa64bf637e6374ac244115' \
 --header 'version: 2023-12-15' \
 --header 'software-house-id: softwareHouse1' \
 --header 'reseller-id: reseller1' \
