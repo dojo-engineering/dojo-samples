@@ -6,12 +6,11 @@
 $publicSandboxKey = "sk_sandbox_1WYDtq7yAdqhmQ7KEUAvPlCCRBYc9HTY9KOPJKZtfWkzsSISj1L8c4GG5l4pBB5Bj85hkJgTL9vmOmki5QnQfQ"
 
 Invoke-WebRequest `
-    -Uri 'https://staging-api.dojo.dev/master/terminal-sessions/ts_sandbox_65af01524a36e6a14356dbc0/cancel'`
-    -Method PUT `
+    -Uri 'https://staging-api.dojo.dev/master/terminal-sessions/ts_sandbox_65aa64bf637e6374ac244115'`
+    -Method GET `
     -Headers @{
         "Version" = "2023-12-15"
         "Authorization" = "Basic $publicSandboxKey"
         "software-house-id" = "softwareHouse1"
         "reseller-id" = "reseller1"
     }
-
