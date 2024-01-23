@@ -7,11 +7,10 @@ headers = {
     'version': '2023-12-15',
     'software-house-id': 'softwareHouse1',
     'reseller-id': 'reseller1',
-    'Content-Type': 'application/json',
     'Accept': 'application/json',
     'Authorization': 'Basic sk_sandbox_1WYDtq7yAdqhmQ7KEUAvPlCCRBYc9HTY9KOPJKZtfWkzsSISj1L8c4GG5l4pBB5Bj85hkJgTL9vmOmki5QnQfQ'
 }
-conn.request("PUT", "/master/terminal-sessions/ts_sandbox_65af01524a36e6a14356dbc0/cancel", payload, headers)
+conn.request("GET", "/master/terminal-sessions/ts_sandbox_65aa64bf637e6374ac244115", payload, headers)
 
 res = conn.getresponse()
 data = res.read()
