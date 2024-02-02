@@ -11,7 +11,7 @@ payload = "{\"tipsAmount\":{\"value\":200,\"currencyCode\":\"GBP\"}}"
 
 headers = {
     'Content-Type': "application/json",
-    'Version': "2022-04-07",
+    'Version': "2024-01-15",
     'Authorization': "Basic <your_api_key>"
     }
 

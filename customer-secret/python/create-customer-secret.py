@@ -9,7 +9,7 @@ import json
 conn = http.client.HTTPSConnection("api.dojo.tech")
 payload = ''
 headers = {
-  'Version': '2022-04-07',
+  'Version': '2024-01-15',
   'Content-Type': 'application/json',
   'Authorization': 'Basic sk_sandbox_c8oLGaI__msxsXbpBDpdtwJEz_eIhfQoKHmedqgZPCdBx59zpKZLSk8OPLT0cZolbeuYJSBvzDVVsYvtpo5RkQ'
 }

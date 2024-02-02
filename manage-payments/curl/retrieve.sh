@@ -7,4 +7,4 @@ curl -v --request GET \
   --url https://api.dojo.tech/payment-intents/<paymentIntentId>\
   --header 'Content-Type: application/json' \
   --header 'Authorization: Basic <your_api_key>' \
-  --header 'Version: 2022-04-07' 
+  --header 'Version: 2024-01-15' 
