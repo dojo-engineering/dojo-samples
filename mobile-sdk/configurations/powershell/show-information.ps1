@@ -22,7 +22,7 @@ Invoke-WebRequest `
         "itemLines": [
             {
                 "id": "item 1",
-                "caption": "Baseball hat",
+                "name": "Baseball hat",
                 "amountTotal": {
                     "value": 1200,
                     "currencyCode": "GBP"
@@ -30,7 +30,7 @@ Invoke-WebRequest `
             },
             {
                 "id": "item 2",
-                "caption": "Baseball ball",
+                "name": "Baseball ball",
                 "amountTotal": {
                     "value": 350,
                     "currencyCode": "GBP"
@@ -38,7 +38,7 @@ Invoke-WebRequest `
             },
             {
                 "id": "item 3",
-                "caption": "Baseball bat",
+                "name": "Baseball bat",
                 "amountTotal": {
                     "value": 2500,
                     "currencyCode": "GBP"

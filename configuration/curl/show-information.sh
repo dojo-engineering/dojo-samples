@@ -18,7 +18,7 @@ curl -v --request POST \
             {
                 "id": "item 1",
                 "quantity": 4,
-                "caption": "Dog socks",
+                "name": "Dog socks",
                 "amountTotal": {
                     "value": 400,
                     "currencyCode": "GBP"
@@ -27,7 +27,7 @@ curl -v --request POST \
             {
                 "id": "item 5",
                 "quantity": 1,
-                "caption": "Dog bandana",
+                "name": "Dog bandana",
                 "amountTotal": {
                     "value": 600,
                     "currencyCode": "GBP"

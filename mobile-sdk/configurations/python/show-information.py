@@ -16,7 +16,7 @@ payload = json.dumps({
     "itemLines": [
         {
           "id": "item 1",
-          "caption": "Baseball hat",
+          "name": "Baseball hat",
           "amountTotal": {
                   "value": 1200,
                   "currencyCode": "GBP"
@@ -24,7 +24,7 @@ payload = json.dumps({
         },
         {
           "id": "item 2",
-          "caption": "Baseball ball",
+          "name": "Baseball ball",
           "amountTotal": {
                   "value": 350,
                   "currencyCode": "GBP"
@@ -32,7 +32,7 @@ payload = json.dumps({
         },
         {
           "id": "item 3",
-          "caption": "Baseball bat",
+          "name": "Baseball bat",
           "amountTotal": {
                   "value": 2500,
                   "currencyCode": "GBP"
