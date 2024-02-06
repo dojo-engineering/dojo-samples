@@ -7,7 +7,7 @@ curl -v --request POST \
   --url https://api.dojo.tech/payment-intents \
   --header 'Content-Type: application/json' \
   --header 'Authorization: Basic sk_sandbox_c8oLGaI__msxsXbpBDpdtwJEz_eIhfQoKHmedqgZPCdBx59zpKZLSk8OPLT0cZolbeuYJSBvzDVVsYvtpo5RkQ' \
-  --header 'Version: 2024-01-15' \
+  --header 'Version: 2024-02-05' \
   --data '{
         "amount": {
             "value": 1510,

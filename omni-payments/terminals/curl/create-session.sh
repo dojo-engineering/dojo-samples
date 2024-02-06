@@ -4,7 +4,7 @@
 # for secure testing.
 
 curl --location --request POST 'https://staging-api.dojo.dev/master/terminal-sessions' \
-    --header 'version: 2024-01-15' \
+    --header 'version: 2024-02-05' \
     --header 'software-house-id: softwareHouse1' \
     --header 'reseller-id: reseller1' \
     --header 'Content-Type: application/json' \

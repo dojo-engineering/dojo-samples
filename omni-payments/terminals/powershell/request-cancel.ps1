@@ -9,7 +9,7 @@ Invoke-WebRequest `
     -Uri 'https://staging-api.dojo.dev/master/terminal-sessions/ts_sandbox_65af01524a36e6a14356dbc0/cancel'`
     -Method PUT `
     -Headers @{
-        "Version" = "2024-01-15"
+        "Version" = "2024-02-05"
         "Authorization" = "Basic $publicSandboxKey"
         "software-house-id" = "softwareHouse1"
         "reseller-id" = "reseller1"

@@ -9,7 +9,7 @@ Invoke-WebRequest `
     -Uri 'https://api.dojo.tech/customers/cust_sandbox_6g-HvPv6VkG_Q_PXCpJqmw/create-secret' `
     -Method POST `
     -Headers @{
-        "Version" = "2024-01-15"
+        "Version" = "2024-02-05"
         "Authorization" = "Basic $publicSandboxKey"
     } `
     -ContentType 'application/json'

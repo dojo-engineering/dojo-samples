@@ -8,7 +8,7 @@ import http.client
 conn = http.client.HTTPSConnection("api.dojo.tech")
 
 headers = {
-    'Version': "2024-01-15",
+    'Version': "2024-02-05",
     'Authorization': "Basic <your_api_key>"
     }
 conn.request("DELETE", f"/payment-intents/{paymentIntentId}", headers=headers)

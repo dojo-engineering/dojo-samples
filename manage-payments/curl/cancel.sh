@@ -6,4 +6,4 @@
 curl -v --request DELETE \
   --url https://api.dojo.tech/payment-intents/<paymentIntentId> \
   --header 'Authorization: Basic <your_api_key>' \
-  --header 'Version: 2024-01-15'
+  --header 'Version: 2024-02-05'

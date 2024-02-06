@@ -7,4 +7,4 @@ curl -v --request POST \
     --url 'https://api.dojo.tech/setup-intents/si_sandbox_Oh69aQaQMUuNIPJcPrcRwQ' \
     --header 'Content-Type: application/json' \
     --header 'Authorization: Basic sk_sandbox_c8oLGaI__msxsXbpBDpdtwJEz_eIhfQoKHmedqgZPCdBx59zpKZLSk8OPLT0cZolbeuYJSBvzDVVsYvtpo5RkQ' \
-    --header 'Version: 2024-01-15'
+    --header 'Version: 2024-02-05'

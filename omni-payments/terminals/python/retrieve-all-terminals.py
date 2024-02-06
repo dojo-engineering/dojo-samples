@@ -4,7 +4,7 @@ import json
 conn = http.client.HTTPSConnection("staging-api.dojo.dev")
 payload = ''
 headers = {
-    'version': '2024-01-15',
+    'version': '2024-02-05',
     'software-house-id': 'softwareHouse1',
     'reseller-id': 'reseller1',
     'Accept': 'application/json',

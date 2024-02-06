@@ -29,7 +29,7 @@ def hello():
           })
         headers = {
             'Content-Type': "application/json",
-            'Version': "2024-01-15",
+            'Version': "2024-02-05",
             'Authorization': "Basic sk_sandbox_c8oLGaI__msxsXbpBDpdtwJEz_eIhfQoKHmedqgZPCdBx59zpKZLSk8OPLT0cZolbeuYJSBvzDVVsYvtpo5RkQ" # <-- Change to your secret key
             }
         conn.request("POST", "/payment-intents/", payload, headers)
