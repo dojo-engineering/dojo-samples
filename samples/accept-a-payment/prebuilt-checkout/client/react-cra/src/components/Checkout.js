@@ -73,7 +73,7 @@ export const Checkout = ({ useSaveCards }) => {
                 Built-in payment page. To get the list of test cards 💳 go{" "}
                 <a
                   target="blank"
-                  href="https://docs.dojo.tech/payments/development-resources/testing"
+                  href="https://docs.dojo.tech/development-resources/testing"
                 >
                   here
                 </a>
