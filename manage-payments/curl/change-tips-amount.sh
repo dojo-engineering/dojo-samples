@@ -8,7 +8,7 @@ curl -v --request POST \
   --header 'Content-Type: application/json' \
   --header 'IdempotencyKey: 656565gfyd65' \
   --header 'Authorization: Basic <your_api_key>' \
-  --header 'Version: 2022-04-07' \
+  --header 'Version: 2024-02-05' \
   --data '{
     "tipsAmount": {
       "value": 200,

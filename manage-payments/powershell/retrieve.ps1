@@ -10,6 +10,6 @@ Invoke-WebRequest `
     -Uri 'https://api.dojo.tech/payment-intents/<paymentIntentId>' `
     -Method GET `
     -Headers @{
-        "Version" = "2022-04-07"
+        "Version" = "2024-02-05"
         "Authorization" = "Basic $publicSandboxKey"
     }

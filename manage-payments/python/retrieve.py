@@ -9,7 +9,7 @@ import json
 conn = http.client.HTTPSConnection("api.dojo.tech")
 
 headers = {
-    'Version': "2022-04-07",
+    'Version': "2024-02-05",
     'Authorization': "Basic <your_api_key>"
     }
 
