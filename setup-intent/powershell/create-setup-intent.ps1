@@ -6,7 +6,7 @@
 $publicSandboxKey = "sk_sandbox_c8oLGaI__msxsXbpBDpdtwJEz_eIhfQoKHmedqgZPCdBx59zpKZLSk8OPLT0cZolbeuYJSBvzDVVsYvtpo5RkQ"
 
 Invoke-WebRequest `
-    -Uri 'https://api.dojo.tech/payment-intents' `
+    -Uri 'https://api.dojo.tech/setup-intents' `
     -Method POST `
     -Headers @{
         "version" = "2024-02-05"
