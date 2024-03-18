@@ -13,7 +13,7 @@ payload = json.dumps({
 })
 headers = {
     'Content-Type': "application/json",
-    'version': '2023-12-15',
+    'version': '2024-02-05',
     'software-house-id': 'softwareHouse1',
     'reseller-id': 'reseller1',
     'Accept': 'application/json',

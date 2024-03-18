@@ -9,7 +9,7 @@ Invoke-WebRequest `
     -Uri 'https://api.dojo.tech/webhooks' `
     -Method POST `
     -Headers @{
-        "version" = "2022-04-07"
+        "version" = "2024-02-05"
         "Authorization" = "Basic $publicSandboxKey"
     } `
     -ContentType 'application/json' `

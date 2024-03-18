@@ -9,7 +9,7 @@ Invoke-WebRequest `
     -Uri 'https://staging-api.dojo.dev/master/terminals?statuses=Available'`
     -Method GET `
     -Headers @{
-        "Version" = "2023-12-15"
+        "Version" = "2024-02-05"
         "Authorization" = "Basic $publicSandboxKey"
         "software-house-id" = "softwareHouse1"
         "reseller-id" = "reseller1"

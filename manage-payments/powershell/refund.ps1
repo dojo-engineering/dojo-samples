@@ -10,7 +10,7 @@ Invoke-WebRequest `
     -Uri 'https://api.dojo.tech/payment-intents/<paymentIntentId>/refunds' `
     -Method POST `
     -Headers @{
-        "Version" = "2022-04-07"
+        "Version" = "2024-02-05"
         "Authorization" = "Basic $publicSandboxKey"
         "IdempotencyKey" = "656565gfyd65"
     } `

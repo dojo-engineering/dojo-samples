@@ -7,7 +7,7 @@ curl -v --request POST \
     --url 'https://api.dojo.tech/payment-intents' \
     --header 'Content-Type: application/json' \
     --header 'Authorization: Basic sk_sandbox_c8oLGaI__msxsXbpBDpdtwJEz_eIhfQoKHmedqgZPCdBx59zpKZLSk8OPLT0cZolbeuYJSBvzDVVsYvtpo5RkQ' \
-    --header 'Version: 2022-04-07' \
+    --header 'Version: 2024-02-05' \
     --data '{
         "reference": "Dojo Cafe | Booking request for Table 4",
         "merchantInitiatedTransactionType": "NoShow",

@@ -7,7 +7,7 @@ $publicSandboxKey = "sk_sandbox_c8oLGaI__msxsXbpBDpdtwJEz_eIhfQoKHmedqgZPCdBx59z
 Invoke-WebRequest `
     -Uri 'https://api.dojo.tech/payment-intents' `
     -Method POST `
-    -Headers @{ "Version" = "2022-04-07"; "Authorization" = "Basic $publicSandboxKey" } `
+    -Headers @{ "Version" = "2024-02-05"; "Authorization" = "Basic $publicSandboxKey" } `
     -ContentType 'application/json' `
     -Body '{
         "amount": {

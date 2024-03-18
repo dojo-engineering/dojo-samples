@@ -7,7 +7,7 @@ curl -v --request POST \
   --url https://api.dojo.tech/webhooks \
   --header 'Authorization: Basic sk_sandbox_c8oLGaI__msxsXbpBDpdtwJEz_eIhfQoKHmedqgZPCdBx59zpKZLSk8OPLT0cZolbeuYJSBvzDVVsYvtpo5RkQ' \
   --header 'Content-Type: application/json' \
-  --header 'Version: 2022-04-07' \
+  --header 'Version: 2024-02-05' \
   --data '{
     "events": ["payment_intent.status_updated"],
     "url": "https://example.com/incoming-events"
