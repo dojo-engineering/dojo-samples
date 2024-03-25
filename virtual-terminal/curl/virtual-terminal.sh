@@ -14,5 +14,5 @@ curl -v --request POST \
             "currencyCode":"GBP"
         },
         "reference":"Order 234",
-        "transactionSource": "MOTO"
+        "cardHolderNotPresent": true
     }'

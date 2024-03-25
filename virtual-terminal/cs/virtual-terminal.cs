@@ -12,5 +12,5 @@ var result = await paymentIntentsClient.CreatePaymentIntentAsync(new CreatePayme
         CurrencyCode = "GBP"
     },
     Reference = "Order 234",
-    TransactionSource = TransactionSource.MOTO
+    CardHolderNotPresent = true
 });

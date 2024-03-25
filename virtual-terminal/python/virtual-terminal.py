@@ -13,7 +13,7 @@ payload = json.dumps({
         "currencyCode": "GBP"
     },
     "reference": "Order 245",
-    "transactionSource": "MOTO"
+    "cardHolderNotPresent": "true"
 })
 headers = {
     'Content-Type': "application/json",
