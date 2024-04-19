@@ -10,7 +10,7 @@ headers = {
     'Accept': 'application/json',
     'Authorization': 'Basic sk_sandbox_1WYDtq7yAdqhmQ7KEUAvPlCCRBYc9HTY9KOPJKZtfWkzsSISj1L8c4GG5l4pBB5Bj85hkJgTL9vmOmki5QnQfQ'
 }
-conn.request("GET", "/master/terminals/tm_sandbox_65aaa2a8637e6374ac2447c9", payload, headers)
+conn.request("GET", "/terminals/tm_sandbox_65aaa2a8637e6374ac2447c9", payload, headers)
 
 res = conn.getresponse()
 data = res.read()

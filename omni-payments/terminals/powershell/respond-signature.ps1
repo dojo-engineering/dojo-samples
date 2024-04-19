@@ -6,7 +6,7 @@
 $publicSandboxKey = "sk_sandbox_1WYDtq7yAdqhmQ7KEUAvPlCCRBYc9HTY9KOPJKZtfWkzsSISj1L8c4GG5l4pBB5Bj85hkJgTL9vmOmki5QnQfQ"
 
 Invoke-WebRequest `
-    -Uri 'https://api.dojo.tech/master/terminal-sessions/ts_sandbox_65aa64bf637e6374ac244115/signature'`
+    -Uri 'https://api.dojo.tech/terminal-sessions/ts_sandbox_65aa64bf637e6374ac244115/signature'`
     -Method PUT `
     -Headers @{
         "Version" = "2024-02-05"

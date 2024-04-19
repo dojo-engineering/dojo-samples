@@ -10,7 +10,7 @@ headers = {
     'Accept': 'application/json',
     'Authorization': 'Basic sk_sandbox_1WYDtq7yAdqhmQ7KEUAvPlCCRBYc9HTY9KOPJKZtfWkzsSISj1L8c4GG5l4pBB5Bj85hkJgTL9vmOmki5QnQfQ'
 }
-conn.request("GET", "/master/terminals?statuses=Available", payload, headers)
+conn.request("GET", "/terminals?statuses=Available", payload, headers)
 
 res = conn.getresponse()
 data = res.read()

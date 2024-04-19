@@ -3,7 +3,7 @@
 # Sign in to developer.dojo.tech to create your own private sandbox key and use that instead
 # for secure testing.
 
-curl --location --request POST 'https://api.dojo.tech/master/terminal-sessions' \
+curl --location --request POST 'https://api.dojo.tech/terminal-sessions' \
     --header 'version: 2024-02-05' \
     --header 'software-house-id: softwareHouse1' \
     --header 'reseller-id: reseller1' \
