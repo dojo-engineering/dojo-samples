@@ -6,7 +6,7 @@
 $publicSandboxKey = "sk_sandbox_1WYDtq7yAdqhmQ7KEUAvPlCCRBYc9HTY9KOPJKZtfWkzsSISj1L8c4GG5l4pBB5Bj85hkJgTL9vmOmki5QnQfQ"
 
 Invoke-WebRequest `
-    -Uri 'https://staging-api.dojo.dev/master/terminals/tm_sandbox_65aaa2a8637e6374ac2447c9'`
+    -Uri 'https://api.dojo.tech/terminals/tm_sandbox_65aaa2a8637e6374ac2447c9'`
     -Method GET `
     -Headers @{
         "Version" = "2024-02-05"

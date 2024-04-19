@@ -12,7 +12,7 @@ const CardDropdown = ({ savedPaymentMethods, onCardSelected }) => {
       case "VISA":
         return "/icons/visa-straight-128px.png";
       case "MASTERCARD":
-        return "/icons/mastercard-straight-128px.png";
+        return "/iconscard-straight-128px.png";
       case "MAESTRO":
         return "/icons/maestro-straight-128px.png";
       case "AMEX":

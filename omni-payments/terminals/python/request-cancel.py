@@ -1,7 +1,7 @@
 import http.client
 import json
 
-conn = http.client.HTTPSConnection("staging-api.dojo.dev")
+conn = http.client.HTTPSConnection("api.dojo.tech")
 payload = ''
 headers = {
     'version': '2024-02-05',
@@ -11,7 +11,7 @@ headers = {
     'Accept': 'application/json',
     'Authorization': 'Basic sk_sandbox_1WYDtq7yAdqhmQ7KEUAvPlCCRBYc9HTY9KOPJKZtfWkzsSISj1L8c4GG5l4pBB5Bj85hkJgTL9vmOmki5QnQfQ'
 }
-conn.request("PUT", "/master/terminal-sessions/ts_sandbox_65af01524a36e6a14356dbc0/cancel", payload, headers)
+conn.request("PUT", "/terminal-sessions/ts_sandbox_65af01524a36e6a14356dbc0/cancel", payload, headers)
 
 res = conn.getresponse()
 data = res.read()

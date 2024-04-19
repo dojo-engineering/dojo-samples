@@ -1,7 +1,7 @@
 import http.client
 import json
 
-conn = http.client.HTTPSConnection("staging-api.dojo.dev")
+conn = http.client.HTTPSConnection("api.dojo.tech")
 payload = json.dumps({
     "terminalId": "tm_65a7e8c0bee9b6390862337c",
     "details": {
@@ -19,7 +19,7 @@ headers = {
     'Accept': 'application/json',
     'Authorization': 'Basic sk_sandbox_1WYDtq7yAdqhmQ7KEUAvPlCCRBYc9HTY9KOPJKZtfWkzsSISj1L8c4GG5l4pBB5Bj85hkJgTL9vmOmki5QnQfQ'
 }
-conn.request("POST", "/master/terminal-sessions", payload, headers)
+conn.request("POST", "/terminal-sessions", payload, headers)
 res = conn.getresponse()
 data = res.read()
 json_data = json.loads(data.decode("utf-8"))
