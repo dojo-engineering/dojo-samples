@@ -1,7 +1,7 @@
 import http.client
 import json
 
-conn = http.client.HTTPSConnection("staging-api.dojo.dev")
+conn = http.client.HTTPSConnection("api.dojo.tech")
 payload = json.dumps({
     "terminalId": "tm_65a7e8c0bee9b6390862337c",
     "details": {

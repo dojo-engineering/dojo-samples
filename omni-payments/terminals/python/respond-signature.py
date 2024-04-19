@@ -1,7 +1,7 @@
 import http.client
 import json
 
-conn = http.client.HTTPSConnection("staging-api.dojo.dev")
+conn = http.client.HTTPSConnection("api.dojo.tech")
 payload = json.dumps({
     "accepted": True
 })
