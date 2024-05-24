@@ -19,10 +19,11 @@ private final DojoPaymentFlowHandler dojoPaymentFlowHandler = DojoSDKDropInUI.IN
                 new ArrayList<>()
         );
         DojoPaymentType paymentType = DojoPaymentType.SETUP_INTENT;
-        button.setOnClickListener(v -> dojoPaymentFlowHandler.startPaymentFlow(
+        // On "Pay" tapped
+        dojoPaymentFlowHandler.startPaymentFlow(
                 new DojoPaymentFlowParams(
                         "pi_sandbox_RBMHTJ4fIkmSppDILZVCGw",
                         dojoGPayConfig, // add this if your app supports Google Pay else pass null.
                         paymentType
                 )
-        ));
+        );
