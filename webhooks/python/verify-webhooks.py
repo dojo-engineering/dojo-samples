@@ -19,7 +19,7 @@ def webhook():
         print(event)
         # signature verification
         secret = "PDYkJQq6sESYHp_zJuTTBQ"
-        signatureHeader = request.header.get('Dojo-Signature')
+        signatureHeader = request.header.get('dojo-signature')
 
         signature = hmac.new(secret, str(payload))
 
