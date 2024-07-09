@@ -1,10 +1,5 @@
 repositories {
-    ...
     maven {
         url = uri("https://cardinalcommerceprod.jfrog.io/artifactory/android")
-        credentials { // Contact Dojo support for credentials
-            username = "" 
-            password = ""
-            }
-        }
+    }
 }
