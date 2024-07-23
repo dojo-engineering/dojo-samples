@@ -1,6 +1,6 @@
 var dojoSDK: DojoTapToPayOniPhone? = DojoTapToPayOniPhone(env: .staging)
 let secret: String = "<secret>"
-let paymentIntentId: String = "<paymenIntentId>"
+let paymentIntentId: String = "<paymentIntentId>"
 var terminalStatus: DojoTerminalStatus = dojoSDK?.getTerminalActivationStatus(secret: secret)
 guard terminalStatus == .operational else { return }
 do {
