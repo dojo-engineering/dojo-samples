@@ -1,6 +1,6 @@
 val baseAmount = bundle.getInt("com.dojo.extra.BASE_AMOUNT", -1)
 val gratuityAmount = bundle.getInt("com.dojo.extra.GRATUITY_AMOUNT", -1)
-val txResult = bundle.getString("com.dojo.extra.TRANSACTION_RESULT”)
+val txResult = bundle.getString("com.dojo.extra.TRANSACTION_RESULT")
 val authCode = bundle.getString("com.dojo.extra.AUTH_CODE")
 val txId = bundle.getString("com.dojo.extra.TRANSACTION_ID")
 val paymentMethod = bundle.getString("com.dojo.extra.PAYMENT_METHOD")
