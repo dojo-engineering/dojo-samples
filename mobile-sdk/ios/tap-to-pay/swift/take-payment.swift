@@ -1,10 +1,14 @@
-var dojoSDK: DojoTapToPayOniPhone? = DojoTapToPayOniPhone(env: .staging)
+let dojoSDK: DojoTapToPayOniPhone = DojoTapToPayOniPhone(env: .staging)
 let secret: String = "<secret>"
 let paymentIntentId: String = "<paymentIntentId>"
-var terminalStatus: DojoTerminalStatus = dojoSDK?.getTerminalActivationStatus(secret: secret)
-guard terminalStatus == .operational else { return }
 do {
-    let result = try await dojoSDK?.startPayment(paymentIntentId: paymentIntentId, secret: secret)
-    } catch {
-        print(error)
+    let terminalStatus = try await dojoSDK.getTerminalActivationStatus(secret: secret)
+    if initialStatus != .operational { 
+	// restart activation
+        return
     }
+    let result = try await dojoSDK.startPayment(paymentIntentId: paymentIntentId, secret: secret)
+    print(result.status)
+} catch {
+    print(error)
+}
