@@ -1,6 +1,10 @@
-var dojoSDK: DojoTapToPayOniPhone? = DojoTapToPayOniPhone(env: .staging)
+let dojoSDK: DojoTapToPayOniPhone = DojoTapToPayOniPhone(env: .staging)
 let secret: String = "<secret>"
-if let isAccountLinked = try? await dojoSDK?.isAccountLinked(secret),
-  !isAccountLinked {
-    try await dojoSDK?.linkAccount(secret)
-  }
+do {
+    if try await dojoSDK.isAccountLinked(secret) == false {
+    	try await dojoSDK.linkAccount(secret)
+    }
+} catch {
+    print(error)
+}
+
