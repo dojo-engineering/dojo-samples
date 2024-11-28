@@ -25,7 +25,6 @@ public class CheckoutController : ControllerBase
                     Value = checkoutRequest.Amount,
                     CurrencyCode = "GBP"
                 },
-                PaymentSource = "payment-links",
                 Reference = Guid.NewGuid().ToString() // can be you order id
             }, cancellationToken);
 
