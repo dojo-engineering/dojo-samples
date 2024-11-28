@@ -24,7 +24,6 @@ def hello():
             "currencyCode": "GBP"
         },
         "reference": "Order 245",
-        "paymentSource": "payment-links"
     })
     headers = {
         'Content-Type': "application/json",
