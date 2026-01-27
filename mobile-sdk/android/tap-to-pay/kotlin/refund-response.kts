@@ -1,14 +1,16 @@
 val intent = Intent("com.dojo.action.TX_COMPLETE")
 intent.putExtra("com.dojo.extra.REFUND_STATUS, refundStatus: String)
-intent.putExtra("com.dojo.extra.TRANSACTION_RESULT", transactionResult: String (enum: SUCCESSFUL, DECLINED, CANCELLED, UNSUCCESSFUL))
-intent.putExtra("com.dojo.extra.TRANSACTION_ID", transactionId: String)
-intent.putExtra("com.dojo.extra.AUTH_CODE", authCode: String)
-intent.putExtra("com.dojo.extra.BASE_AMOUNT", baseAmount: Integer)
-intent.putExtra("com.dojo.extra.PAYMENT_METHOD", paymentMethod: String (enum: KEYED, SWIPED, ICC_CHIP, CONTACTLESS))
-intent.putExtra("com.dojo.extra.CARDHOLDER_VERIFICATION_METHOD", cardholderVerificationMethod: String (enum: NONE, PIN, DEVICE))
-intent.putExtra("com.dojo.extra.CARD_SCHEME", cardScheme: String (enum: VISA, MASTERCARD, MAESTRO, AMEX, DISCOVER, DINERS, UNKNOWN))
-intent.putExtra("com.dojo.extra.CARD_APPLICATION_LABEL", cardApplicationLabel: String)
-intent.putExtra("com.dojo.extra.CARD_APPLICATION_ID", cardApplicationId: String)
+intent.putExtra("com.dojo.extra.TRANSACTION_RESULT", "AUTHORISED") // enum: AUTHORISED, DECLINED, CANCELLED, FAILED
+intent.putExtra("com.dojo.extra.TRANSACTION_ID", "123456789")
+intent.putExtra("com.dojo.extra.AUTH_CODE", "654321")
+intent.putExtra("com.dojo.extra.BASE_AMOUNT", 1000)
+intent.putExtra("com.dojo.extra.PAYMENT_METHOD", "CONTACTLESS") // enum: KEYED, MANUAL_ENTRY, SWIPE, ICC_CHIP, CONTACTLESS, UNKNOWN
+intent.putExtra("com.dojo.extra.CARDHOLDER_VERIFICATION_METHOD", "PIN") // enum: PIN, SIGNATURE
+intent.putExtra("com.dojo.extra.CARD_SCHEME", "VISA") // enum: VISA, MASTERCARD, MAESTRO, AMERICAN_EXPRESS, DISCOVER, DINERS, UNION_PAY, JCB, UNKNOWN
+intent.putExtra("com.dojo.extra.CARD_APPLICATION_LABEL", "VISA DEBIT")
+intent.putExtra("com.dojo.extra.CARD_APPLICATION_ID", "A0000000031010")
+intent.putExtra("com.dojo.extra.CARD_PAN", "************0226") // masked PAN
+
 
 with(requireActivity()) {
     setResult(Activity.RESULT_OK, intent)
