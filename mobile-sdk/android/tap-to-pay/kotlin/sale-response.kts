@@ -11,6 +11,7 @@ intent.putExtra("com.dojo.extra.CARD_SCHEME", "VISA") // enum: VISA, MASTERCARD,
 intent.putExtra("com.dojo.extra.CARD_APPLICATION_LABEL", "VISA DEBIT")
 intent.putExtra("com.dojo.extra.CARD_APPLICATION_ID", "A0000000031010")
 intent.putExtra("com.dojo.extra.CARD_PAN", "************0226") // masked PAN
+intent.putExtra("com.dojo.extra.DATE_TIME", "2026-02-13T10:23:45.123456Z") // Time date for the transaction, ISO 8601 UTC e.g. "2026-02-13T10:23:45.123456Z"
 
 with(requireActivity()) {
     setResult(Activity.RESULT_OK, intent)
